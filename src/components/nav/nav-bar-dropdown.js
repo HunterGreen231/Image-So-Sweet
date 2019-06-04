@@ -6,8 +6,16 @@ export default function NavBarDropdown(props) {
     props.handleToggle();
   };
 
+  const classNames = {
+    show: "nav-bar-drop-down-wrapper-show",
+    hide: "nav-bar-drop-down-wrapper-hide"
+  };
+
   return (
-    <div className="nav-bar-drop-down-wrapper">
+    <div
+      className={props.isOpen ? classNames.show : classNames.hide}
+      style={{ display: !props.deleteNav ? "none" : "block" }}
+    >
       <div className="bar">
         <button className="dropdown-button" onClick={() => handleToggle()}>
           <NavLink

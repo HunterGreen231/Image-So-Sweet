@@ -9,10 +9,6 @@ export default class Blog extends Component {
     super();
   }
 
-  componentDidMount() {
-    console.log("Component mounted: Blog");
-  }
-
   photos = [
     {
       className: "image",
@@ -115,6 +111,7 @@ export default class Blog extends Component {
   render() {
     return (
       <div className="page-content blog-container">
+        <button onClick={console.log("hit")}>Click me</button>
         <Gallery photos={this.photos} direction={"column"} />
       </div>
     );

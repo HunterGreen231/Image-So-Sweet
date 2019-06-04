@@ -3,9 +3,12 @@
   color: white;
   font-size: 1.2rem;
   transition: 0.3s ease-in-out;
+  border-bottom: 1px solid transparent;
+  border-radius: 1px;
 
   &:hover {
     color: grey;
+    border-bottom: 1px solid grey !important;
     cursor: pointer;
   }
 }
