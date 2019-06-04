@@ -1,9 +1,9 @@
 .nav-bar-drop-down-wrapper {
-  display: flex;
   flex-direction: column;
   width: 100%;
   position: absolute;
   z-index: 0;
+  transition: all 1s;
   .bar {
     background-color: black;
     display: flex;

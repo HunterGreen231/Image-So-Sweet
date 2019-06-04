@@ -5,6 +5,7 @@ export default function NavBarDropdown(props) {
   const handleToggle = () => {
     props.handleToggle();
   };
+
   return (
     <div className="nav-bar-drop-down-wrapper">
       <div className="bar">
