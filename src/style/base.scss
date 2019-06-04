@@ -1,0 +1,27 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  font-family: "Alegreya Sans", sans-serif;
+}
+
+h1 {
+  font-family: "Playfair Display SC", serif;
+}
+
+.container {
+  display: flex;
+  // flex-direction: column;
+  justify-content: space-evenly;
+  width: 100%;
+
+  .app-wrapper {
+    width: 100%;
+  }
+
+  .page-content {
+    margin-top: 60px;
+  }
+}

@@ -1,0 +1,17 @@
+@media (min-width: 48em) {
+  .hamburger-wrapper {
+    display: none !important;
+  }
+
+  .nav-link {
+    display: flex !important;
+  }
+
+  .divider {
+    display: flex !important;
+  }
+
+  .nav-bar-drop-down-wrapper {
+    display: none;
+  }
+}

@@ -1,0 +1,33 @@
+.nav-bar-drop-down-wrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  .bar {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+
+    button {
+      background-color: black;
+      border: none;
+
+      .nav-link-dropdown {
+        @include link;
+      }
+    }
+  }
+
+  .bar-bottom {
+    height: 70px;
+
+    .nav-link-dropdown {
+      position: relative;
+      bottom: 10px;
+    }
+  }
+}
