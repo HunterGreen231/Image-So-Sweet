@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
 import Gallery from "react-photo-gallery";
 import Image from "../../../static/images/IMG_8111-Edit.jpg";
 import Image2 from "../../../static/images/D44A7172-2.jpg";
@@ -111,7 +110,6 @@ export default class Blog extends Component {
   render() {
     return (
       <div className="page-content blog-container">
-        <button onClick={console.log("hit")}>Click me</button>
         <Gallery photos={this.photos} direction={"column"} />
       </div>
     );
