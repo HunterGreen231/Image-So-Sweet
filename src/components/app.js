@@ -11,30 +11,27 @@ import NoMatch from "./pages/no-match";
 export default function App() {
   const [dropDown, setDropDown] = useState(false);
   const [deleteNav, setDeleteNav] = useState(false);
-
-  const sleep = milliseconds => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-  };
-
-  const handleToggle = async () => {
-    setDeleteNav(true);
-    if (deleteNav === dropDown) {
-      setDropDown(!dropDown);
-      await sleep(400);
-      setDeleteNav(!deleteNav);
-    }
-  };
+  const [isOpen, handleIsOpen] = useState(false);
 
   return (
     <div className="container">
       <Router>
         <div className="app-wrapper">
           <div className="fixed-nav-bar">
-            <NavBar handleToggle={handleToggle} />
+            <NavBar
+              isOpen={isOpen}
+              setDropDown={setDropDown}
+              dropDown={dropDown}
+              handleIsOpen={handleIsOpen}
+              setDeleteNav={setDeleteNav}
+            />
             <NavBarDropDown
-              isOpen={dropDown}
+              dropDown={dropDown}
+              setDropDown={setDropDown}
               deleteNav={deleteNav}
-              handleToggle={handleToggle}
+              setDeleteNav={setDeleteNav}
+              handleIsOpen={handleIsOpen}
+              isOpen={isOpen}
             />
           </div>
           <Switch>

@@ -23,10 +23,25 @@ const NavBar = props => {
   //   return `${window.location.pathname}/#bottom`;
   // };
 
+  const handleHamBurgerClick = () => {
+    props.handleIsOpen(!props.isOpen);
+    props.setDropDown(!props.dropDown);
+  };
+
+  const handleMouseLeave = () => {
+    if (!props.isOpen) {
+      props.setDeleteNav(false);
+    }
+  };
+
   return (
     // Home, Blog, Contact, Availability, Available Locations, About
 
-    <div className="nav-wrapper">
+    <div
+      className="nav-wrapper"
+      onMouseEnter={() => props.setDeleteNav(true)}
+      onMouseLeave={() => handleMouseLeave()}
+    >
       <div className="nav-link-wrapper">
         <div className="nav-link">
           <NavLink exact to="/" activeClassName="nav-link-active">
@@ -53,7 +68,7 @@ const NavBar = props => {
         </div>
         {/* <NavLink to={}>Contact</NavLink> */}
         <div className="hamburger-wrapper">
-          <button onClick={() => props.handleToggle()}>
+          <button onClick={() => handleHamBurgerClick()}>
             <FontAwesomeIcon icon={faBars} className="hamburger" />
           </button>
         </div>

@@ -2,8 +2,15 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function NavBarDropdown(props) {
-  const handleToggle = () => {
-    props.handleToggle();
+  const handleToggle = async () => {
+    props.handleIsOpen(!props.isOpen);
+    props.setDropDown(!props.dropDown);
+    await sleep(400);
+    props.setDeleteNav(false);
+  };
+
+  const sleep = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
   };
 
   const classNames = {
@@ -13,8 +20,10 @@ export default function NavBarDropdown(props) {
 
   return (
     <div
-      className={props.isOpen ? classNames.show : classNames.hide}
-      style={{ display: !props.deleteNav ? "none" : "block" }}
+      className={props.dropDown ? classNames.show : classNames.hide}
+      style={{
+        display: !props.deleteNav ? "none" : "block"
+      }}
     >
       <div className="bar">
         <button className="dropdown-button" onClick={() => handleToggle()}>
