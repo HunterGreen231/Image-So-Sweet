@@ -5,10 +5,12 @@
   padding: 0;
   box-sizing: inherit;
   font-family: "Alegreya Sans", sans-serif;
+  color: white;
 }
 
 h1 {
   font-family: "Playfair Display SC", serif;
+  color: white;
 }
 
 .container {
@@ -16,6 +18,7 @@ h1 {
   // flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
+  background-color: black;
 
   .app-wrapper {
     width: 100%;

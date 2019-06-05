@@ -7,22 +7,6 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import NavBarDropDown from "./nav-bar-dropdown";
 
 const NavBar = props => {
-  // componentDidMount() {
-  //   if (this.$ref && location.href.includes("#my-ref")) {
-  //     this.$ref.scrollIntoView({
-  //       // optional params
-  //       behaviour: "smooth",
-  //       block: "start",
-  //       inline: "center"
-  //     });
-  //   }
-  // }
-
-  // const handleHamBurgerClick = props.setDropDown(!props.dropDown)
-  // getContactLink = () => {
-  //   return `${window.location.pathname}/#bottom`;
-  // };
-
   const handleHamBurgerClick = () => {
     props.handleIsOpen(!props.isOpen);
     props.setDropDown(!props.dropDown);
@@ -36,7 +20,6 @@ const NavBar = props => {
 
   return (
     // Home, Blog, Contact, Availability, Available Locations, About
-
     <div
       className="nav-wrapper"
       onMouseEnter={() => props.setDeleteNav(true)}

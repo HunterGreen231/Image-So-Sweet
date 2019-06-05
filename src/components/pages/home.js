@@ -11,17 +11,6 @@ export default class Home extends Component {
     return (
       <div className="page-content">
         <h1>Home</h1>
-        <div
-          style={{ height: "2000px", backgroundColor: "red", width: "100%" }}
-        />
-        <div
-          style={{ backgroundColor: "blue", height: "900px" }}
-          id="bottom"
-          ref={ref => {
-            this.contactComponent = ref;
-            // Dispatch ref to redux
-          }}
-        />
       </div>
     );
   }

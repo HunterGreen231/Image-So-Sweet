@@ -110,6 +110,47 @@ export default class Blog extends Component {
   render() {
     return (
       <div className="page-content blog-container">
+        <div className="session-title-blog-wrapper">
+          <h1>Session Title</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Exercitationem commodi accusantium veniam dicta officiis, vel eius?
+            Natus nisi reprehenderit rerum quasi soluta aperiam, voluptate
+            ipsam, ratione consequuntur iusto similique sit? Ipsum suscipit
+            nihil amet eveniet, sit deleniti velit, quis molestias magni, ea
+            provident maxime commodi! Vel laboriosam quis alias modi fugit ut
+            ipsum debitis quibusdam in doloremque. Perferendis, reprehenderit
+            expedita. Eaque, natus omnis consectetur, non distinctio laborum
+            odio delectus sequi quis saepe nesciunt, provident animi placeat
+            esse sunt minima aliquam libero? Praesentium atque animi numquam
+            nostrum fuga alias accusantium repellendus. Aut numquam veniam,
+            neque architecto saepe a vero, cumque et error doloribus dolorum
+            voluptatum deserunt esse impedit dolore quo. Repellat maiores
+            molestiae odio dolore quo, officiis quas dolor veritatis. Iusto?
+            Reprehenderit fugit temporibus deserunt itaque magni, fuga at,
+            eveniet numquam officiis ratione delectus laudantium. Dolores minus
+            laboriosam quos consequuntur deserunt at quaerat, animi esse, eaque
+            velit neque delectus totam dolorum? Unde sapiente eum amet saepe
+            aliquid commodi quo optio totam! Voluptate impedit ut molestiae
+            saepe iure, sapiente aliquam mollitia fugit repellendus ullam
+            asperiores, officiis explicabo doloribus itaque sunt! Dicta, illum!
+            Doloremque corporis eaque eos unde exercitationem voluptas
+            voluptatem distinctio accusamus dicta optio corrupti eius delectus
+            perferendis reiciendis modi nostrum ipsum, culpa maiores quasi.
+            Officia qui laudantium ratione libero? Nihil, incidunt! Dolorem,
+            commodi ipsam soluta illo autem animi pariatur fuga quae fugit
+            provident ipsum ratione exercitationem labore nulla sunt unde eius,
+            doloribus possimus? Obcaecati accusamus, dolorem eius eligendi culpa
+            placeat voluptatibus? Necessitatibus aperiam voluptas eum, illum
+            delectus, eveniet atque dignissimos itaque obcaecati nihil quidem
+            doloribus illo cum omnis fugit, nisi molestias labore laboriosam!
+            Officia laudantium labore magni expedita, sit quisquam architecto!
+            Voluptatum perferendis esse deleniti, repellat voluptatibus quidem
+            deserunt quod harum cum eaque recusandae eveniet ipsum aperiam ab
+            numquam iure eligendi iusto id nulla sunt delectus quo. Ex nemo
+            dolores atque!
+          </p>
+        </div>
         <Gallery photos={this.photos} direction={"column"} />
       </div>
     );
