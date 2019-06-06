@@ -51,11 +51,11 @@ export default function NavBarDropdown(props) {
       <div className="bar">
         <button className="dropdown-button" onClick={() => handleToggle()}>
           <NavLink
-            to="/blog"
+            to="/gallery"
             className="nav-link-dropdown"
             activeClassName="nav-link-active"
           >
-            Blog
+            Gallery
           </NavLink>
         </button>
       </div>

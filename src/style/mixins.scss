@@ -1,6 +1,6 @@
 @mixin link {
   text-decoration: none;
-  color: white;
+  color: $off-white;
   font-size: 1.2rem;
   transition: 0.3s ease-in-out;
   border-bottom: 1px solid transparent;
@@ -8,7 +8,11 @@
 
   &:hover {
     color: grey;
-    border-bottom: 1px solid grey !important;
     cursor: pointer;
+  }
+
+  &:active {
+    transition: none;
+    color: black;
   }
 }

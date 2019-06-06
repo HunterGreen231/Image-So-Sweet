@@ -3,10 +3,6 @@
   width: 100%;
 }
 
-.nav-link-active {
-  border-bottom: 1px solid white !important;
-}
-
 .nav-wrapper {
   height: 60px;
   background-color: black;
@@ -24,7 +20,6 @@
 
     .nav-link {
       display: none;
-
       a {
         @include link;
       }
@@ -32,7 +27,7 @@
 
     .divider {
       display: none;
-      color: white;
+      color: $off-white;
       font-size: 1.5rem;
       cursor: default;
     }
@@ -56,13 +51,25 @@
       }
     }
     .hamburger {
-      color: white;
+      color: $off-white;
       height: 100%;
       width: 100%;
       transition: 0.3s ease-in-out;
       &:hover {
         color: grey;
       }
+      &:active {
+        transition: none !important;
+        color: black;
+      }
     }
+  }
+}
+
+.nav-link-active {
+  border-bottom: 1px solid $off-white !important;
+
+  &:hover {
+    border-bottom: 1px solid grey !important;
   }
 }

@@ -33,8 +33,8 @@ const NavBar = props => {
         </div>
         <h1 className="divider">/</h1>
         <div className="nav-link">
-          <NavLink to="/blog" activeClassName="nav-link-active">
-            Blog
+          <NavLink to="/gallery" activeClassName="nav-link-active">
+            Gallery
           </NavLink>
         </div>
         <h1 className="divider">/</h1>
