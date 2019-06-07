@@ -1,12 +1,16 @@
 .blog-container {
-  position: absolute;
-  z-index: -1;
+  position: relative;
+  z-index: 0;
   background-color: black;
   width: 100%;
   display: flex;
   flex-direction: column;
   .image {
     object-fit: cover;
+    // transition: 0.5s ease-in-out;
+    // &:hover {
+    //   opacity: 0.5;
+    // }
   }
 
   .react-photo-gallery {
@@ -28,31 +32,6 @@
       margin-bottom: 30px;
       font-size: 2.5rem;
       text-align: center;
-    }
-  }
-
-  .session-nav {
-    width: 30%;
-    display: flex;
-    justify-content: space-around;
-    border-top: 3px solid white;
-    border-right: 3px solid white;
-    border-top-right-radius: 20px;
-    button {
-      font-size: 2.5rem;
-      background-color: black;
-      border: none;
-      color: $off-white;
-      transition: 0.3s ease-in-out;
-
-      &:hover {
-        cursor: pointer;
-        color: grey;
-      }
-
-      &:focus {
-        outline: none;
-      }
     }
   }
 }
