@@ -22,19 +22,9 @@ const NavBar = props => {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
   };
 
-  const handleMouseLeave = () => {
-    if (!props.isOpen) {
-      props.setDeleteNav(false);
-    }
-  };
-
   return (
     // Home, Blog, Contact, Availability, Available Locations, About
-    <div
-      className="nav-wrapper"
-      onMouseEnter={() => props.setDeleteNav(true)}
-      onMouseLeave={() => handleMouseLeave()}
-    >
+    <div className="nav-wrapper">
       <div className="nav-link-wrapper">
         <div className="nav-link">
           <NavLink exact to="/" activeClassName="nav-link-active">
