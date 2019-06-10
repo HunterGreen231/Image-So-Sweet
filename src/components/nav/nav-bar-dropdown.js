@@ -3,26 +3,14 @@ import { NavLink } from "react-router-dom";
 
 export default function NavBarDropdown(props) {
   const handleToggle = async () => {
-    props.handleIsOpen(!props.isOpen);
     props.setDropDown(!props.dropDown);
-    await sleep(400);
-    props.setDeleteNav(true);
-  };
-
-  const sleep = milliseconds => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-  };
-
-  const classNames = {
-    show: "nav-bar-drop-down-wrapper-show",
-    hide: "nav-bar-drop-down-wrapper-hide"
   };
 
   return (
     <div
-      className={props.dropDown ? classNames.show : classNames.hide}
+      className="nav-bar-drop-down-wrapper"
       style={{
-        display: props.deleteNav ? "none" : "block"
+        display: props.dropDown ? "block" : "none"
       }}
     >
       <div className="bar">

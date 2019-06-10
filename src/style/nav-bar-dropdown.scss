@@ -1,14 +1,7 @@
-.nav-bar-drop-down-wrapper-hide {
-  transition: all 0.6s ease;
-  opacity: 0;
-}
-
-.nav-bar-drop-down-wrapper-show {
+.nav-bar-drop-down-wrapper {
   position: absolute;
   z-index: 1;
   width: 100%;
-  transition: all 0.6s ease;
-  opacity: 1;
   background-color: black;
 }
 

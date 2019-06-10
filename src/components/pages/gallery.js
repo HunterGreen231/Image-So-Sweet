@@ -124,7 +124,6 @@ export default class GalleryPage extends Component {
         height: this.widthsHeights[rn].height
       });
     }
-    console.log(this.photoObject);
   };
 
   render() {

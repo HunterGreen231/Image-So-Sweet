@@ -7,19 +7,8 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import NavBarDropDown from "./nav-bar-dropdown";
 
 const NavBar = props => {
-  const handleHamBurgerClick = async () => {
-    props.handleIsOpen(!props.isOpen);
+  const handleHamBurgerClick = () => {
     props.setDropDown(!props.dropDown);
-    if (props.deleteNav == true) {
-      props.setDeleteNav(false);
-    } else if (props.deleteNav == false) {
-      await sleep(400);
-      props.setDeleteNav(true);
-    }
-  };
-
-  const sleep = milliseconds => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
   };
 
   return (
