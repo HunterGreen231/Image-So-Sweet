@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Gallery from "react-photo-gallery";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { faSpinner } from "@fortawesome/free-solid-svg-icons";
 
 export default class Session extends Component {
   constructor(props) {
@@ -67,8 +67,7 @@ export default class Session extends Component {
           </div>
         ) : (
           <div className="loader">
-            {/* <FontAwesomeIcon icon={faBars} className="Spinner" /> */}
-            <h1>loader</h1>
+            <FontAwesomeIcon icon={faSpinner} spin />
           </div>
         )}
       </div>

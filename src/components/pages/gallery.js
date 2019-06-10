@@ -1,10 +1,8 @@
 import React, { Component } from "react";
-import Carousel, { Modal } from "react-images";
 import Lightbox from "react-images";
 import axios from "axios";
 
 import Session from "../sessions/session";
-import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 
 export default class GalleryPage extends Component {
   constructor() {

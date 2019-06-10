@@ -4,8 +4,6 @@ import { withRouter } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 
-import NavBarDropDown from "./nav-bar-dropdown";
-
 const NavBar = props => {
   const handleHamBurgerClick = () => {
     props.setDropDown(!props.dropDown);
