@@ -6,7 +6,7 @@ export default function NavBarDropdown(props) {
     props.handleIsOpen(!props.isOpen);
     props.setDropDown(!props.dropDown);
     await sleep(400);
-    props.setDeleteNav(false);
+    props.setDeleteNav(true);
   };
 
   const sleep = milliseconds => {
@@ -22,7 +22,7 @@ export default function NavBarDropdown(props) {
     <div
       className={props.dropDown ? classNames.show : classNames.hide}
       style={{
-        display: !props.deleteNav ? "none" : "block"
+        display: props.deleteNav ? "none" : "block"
       }}
     >
       <div className="bar">

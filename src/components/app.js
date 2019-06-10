@@ -10,7 +10,7 @@ import NoMatch from "./pages/no-match";
 
 export default function App() {
   const [dropDown, setDropDown] = useState(false);
-  const [deleteNav, setDeleteNav] = useState(false);
+  const [deleteNav, setDeleteNav] = useState(true);
   const [isOpen, handleIsOpen] = useState(false);
 
   return (
@@ -24,6 +24,7 @@ export default function App() {
               dropDown={dropDown}
               handleIsOpen={handleIsOpen}
               setDeleteNav={setDeleteNav}
+              deleteNav={deleteNav}
             />
             <NavBarDropDown
               dropDown={dropDown}
