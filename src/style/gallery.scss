@@ -7,10 +7,10 @@
   flex-direction: column;
   .image {
     object-fit: cover;
-    // transition: 0.5s ease-in-out;
-    // &:hover {
-    //   opacity: 0.5;
-    // }
+    transition: 0.5s ease-in-out;
+    &:hover {
+      opacity: 0.6;
+    }
   }
 
   .react-photo-gallery {
@@ -32,6 +32,14 @@
       margin-bottom: 30px;
       font-size: 2.5rem;
       text-align: center;
+    }
+  }
+
+  .loader {
+    height: 100vh;
+
+    .spinner {
+      color: $off-white;
     }
   }
 }

@@ -1,27 +1,33 @@
 import React, { Component } from "react";
 import Gallery from "react-photo-gallery";
-import Lightbox from "react-images";
-import axios from "axios";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 export default class Session extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {
-      result: []
-    };
+    this.breaker = false;
+    this.result = [];
     this.checkImages = this.checkImages.bind(this);
     this.handleWindowClick = this.handleWindowClick.bind(this);
   }
 
-  componentDidMount = () => {
-    if (this.state.result.length == 0) {
-      this.checkImages();
-    }
-  };
-
   checkImages = () => {
-    console.log(this.props.photoObject);
+    if (!this.breaker) {
+      const session = this.props.session;
+
+      this.result = this.props.photoObject.filter(function(value) {
+        return value.session == session;
+      });
+      this.props.updateNumberOfImages(
+        this.result.length,
+        this.props.sessionNumber
+      );
+      if (this.props.photoObject.length + 1 == this.props.apiImageLength) {
+        this.breaker = true;
+      }
+    }
   };
 
   handleWindowClick = () => {
@@ -32,32 +38,37 @@ export default class Session extends Component {
     };
   };
 
+  sleep = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+  };
+
   render() {
     this.handleWindowClick();
     return (
-      <div className="page-content blog-container">
-        {this.props.photoObject.length > 0 ? (
+      <div
+        className="page-content blog-container"
+        onClick={() =>
+          this.props.updateSessionCurrent(this.props.second, this.props.third)
+        }
+      >
+        {this.props.photoObject.length + 1 == this.props.apiImageLength ||
+        (this.props.photoObject.length == this.props.apiImageLength &&
+          this.props.photoObject.length != 0) ? (
           <div>
+            {this.checkImages()}
             <div className="session-title-blog-wrapper">
-              <h1>The Harmon sisters fairy session</h1>
+              <h1>{this.props.session}</h1>
             </div>
             <Gallery
-              photos={this.props.photoObject}
+              photos={this.result}
               direction={"column"}
               onClick={this.props.openLightbox}
             />
-            <Lightbox
-              images={this.props.photoObject}
-              onClose={this.props.closeLightbox}
-              onClickPrev={this.props.gotoPrevious}
-              onClickNext={this.props.gotoNext}
-              currentImage={this.props.currentImage}
-              isOpen={this.props.lightboxIsOpen}
-            />
           </div>
         ) : (
-          <div>
-            <h1>hunter put ze loader here</h1>
+          <div className="loader">
+            {/* <FontAwesomeIcon icon={faBars} className="Spinner" /> */}
+            <h1>loader</h1>
           </div>
         )}
       </div>

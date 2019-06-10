@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import Gallery from "react-photo-gallery";
+import Carousel, { Modal } from "react-images";
 import Lightbox from "react-images";
 import axios from "axios";
 
 import Session from "../sessions/session";
+import { faFileSignature } from "@fortawesome/free-solid-svg-icons";
 
 export default class GalleryPage extends Component {
   constructor() {
@@ -13,10 +14,11 @@ export default class GalleryPage extends Component {
       currentImage: 0,
       previousDimensions: 0,
       response: [],
-      loaded: false,
-      lightboxIsOpen: false
+      lightboxIsOpen: false,
+      apiImageLength: 0
     };
-
+    this.numberOfImages = [];
+    this.sessionCurrent = 0;
     this.photos = [];
     this.photoObject = [];
     this.widthsHeights = [
@@ -38,15 +40,17 @@ export default class GalleryPage extends Component {
     this.openLightbox = this.openLightbox.bind(this);
     this.gotoNext = this.gotoNext.bind(this);
     this.gotoPrevious = this.gotoPrevious.bind(this);
+    this.updateSessionCurrent = this.updateSessionCurrent.bind(this);
   }
 
   componentWillMount() {
     if (this.state.response.length == 0) {
       axios
-        .get("https://image-so-sweet-api.herokuapp.com/images")
+        .get("https://image-so-sweet-api.herokuapp.com/low-res-images")
         .then(response => {
           this.setState({
-            response: response.data
+            response: response.data,
+            apiImageLength: response.data.length
           });
           this.handleImageRender();
         })
@@ -54,20 +58,40 @@ export default class GalleryPage extends Component {
           console.log("Api error: ", error);
         });
     }
-    console.log("LOADED: ", this.state.loaded);
   }
 
-  openLightbox(event, obj) {
+  sleep = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+  };
+
+  updateNumberOfImages = (num, index) => {
+    this.numberOfImages[index] = num;
+  };
+
+  updateSessionCurrent(second = false, third = false) {
+    if (second) {
+      this.sessionCurrent = this.numberOfImages[0];
+    } else if (third) {
+      this.sessionCurrent = this.numberOfImages[0] + this.numberOfImages[1];
+    } else {
+      this.sessionCurrent = 0;
+    }
+  }
+
+  openLightbox = async (event, obj) => {
+    await this.sleep(10);
     this.setState({
-      currentImage: obj.index,
+      currentImage: obj.index + this.sessionCurrent,
       lightboxIsOpen: true
     });
-  }
+  };
   closeLightbox = () => {
     this.setState({
       currentImage: 0,
       lightboxIsOpen: false
     });
+    this.sessionCurrent = 0;
+    this.props.setDeleteNav(true);
   };
   gotoPrevious() {
     this.setState({
@@ -93,66 +117,77 @@ export default class GalleryPage extends Component {
     for (let url of this.state.response) {
       let rn = this.randomNum();
       this.photoObject.push({
-        src: url.image_url,
-        session: url.session,
+        src: url.image_url_low_res,
+        session: url.session_low_res,
         className: "image",
         width: this.widthsHeights[rn].width,
         height: this.widthsHeights[rn].height
       });
     }
+    console.log(this.photoObject);
   };
 
   render() {
-    const thing = [
-      this.photoObject[0],
-      this.photoObject[1],
-      this.photoObject[2],
-      this.photoObject[3],
-      this.photoObject[4],
-      this.photoObject[5],
-      this.photoObject[6]
-    ];
     return (
       <div>
-        {this.photoObject.length > 0 ? (
+        {this.photoObject.length + 1 >= this.state.apiImageLength ? (
           <div>
-            <Session
+            <Lightbox
+              images={this.photoObject}
+              onClose={this.closeLightbox}
+              onClickPrev={this.gotoPrevious}
+              onClickNext={this.gotoNext}
               currentImage={this.state.currentImage}
-              loaded={this.state.loaded}
-              photoObject={thing}
-              openLightbox={this.openLightbox}
-              closeLightbox={this.closeLightbox}
-              gotoPrevious={this.gotoPrevious}
-              gotoNext={this.gotoNext}
-              lightboxIsOpen={this.state.lightboxIsOpen}
-              session={"The Harmon sisters Fairy Session"}
+              isOpen={this.state.lightboxIsOpen}
             />
             <Session
               currentImage={this.state.currentImage}
-              loaded={this.state.loaded}
-              photoObject={thing}
+              photoObject={this.photoObject}
               openLightbox={this.openLightbox}
               closeLightbox={this.closeLightbox}
               gotoPrevious={this.gotoPrevious}
               gotoNext={this.gotoNext}
               lightboxIsOpen={this.state.lightboxIsOpen}
               session={"The Harmon sisters Fairy Session"}
+              sessionNumber={0}
+              updateSessionCurrent={this.updateSessionCurrent}
+              updateNumberOfImages={this.updateNumberOfImages}
+              apiImageLength={this.state.apiImageLength}
             />
             <Session
               currentImage={this.state.currentImage}
-              loaded={this.state.loaded}
-              photoObject={thing}
+              photoObject={this.photoObject}
               openLightbox={this.openLightbox}
               closeLightbox={this.closeLightbox}
               gotoPrevious={this.gotoPrevious}
               gotoNext={this.gotoNext}
               lightboxIsOpen={this.state.lightboxIsOpen}
-              session={"The Harmon sisters Fairy Session"}
+              session={"Snow White"}
+              sessionNumber={1}
+              updateSessionCurrent={this.updateSessionCurrent}
+              second={true}
+              updateNumberOfImages={this.updateNumberOfImages}
+              apiImageLength={this.state.apiImageLength}
+            />
+            <Session
+              currentImage={this.state.currentImage}
+              photoObject={this.photoObject}
+              openLightbox={this.openLightbox}
+              closeLightbox={this.closeLightbox}
+              gotoPrevious={this.gotoPrevious}
+              gotoNext={this.gotoNext}
+              lightboxIsOpen={this.state.lightboxIsOpen}
+              session={"All that Glitters"}
+              sessionNumber={2}
+              updateSessionCurrent={this.updateSessionCurrent}
+              third={true}
+              updateNumberOfImages={this.updateNumberOfImages}
+              apiImageLength={this.state.apiImageLength}
             />
           </div>
         ) : (
           <div>
-            <h1>loader</h1>
+            <h1 style={{ color: "white" }}>loading</h1>
           </div>
         )}
       </div>

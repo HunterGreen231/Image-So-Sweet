@@ -36,7 +36,10 @@ export default function App() {
           </div>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/gallery" component={Gallery} />
+            <Route
+              path="/gallery"
+              render={() => <Gallery setDeleteNav={setDeleteNav} />}
+            />
             <Route component={NoMatch} />
           </Switch>
         </div>
