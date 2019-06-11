@@ -44,6 +44,7 @@ export default class Session extends Component {
 
   render() {
     this.handleWindowClick();
+
     return (
       <div
         className="page-content blog-container"

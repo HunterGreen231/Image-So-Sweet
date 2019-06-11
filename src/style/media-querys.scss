@@ -14,4 +14,14 @@
   .nav-bar-drop-down-wrapper-show {
     display: none !important;
   }
+
+  .hero-background {
+    background-position: center !important;
+    height: 100vh !important;
+
+    img {
+      width: 768px !important;
+      height: 562px !important;
+    }
+  }
 }

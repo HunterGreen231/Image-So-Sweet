@@ -1,0 +1,56 @@
+.page-content {
+  .hero-background {
+    height: 535px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("../../static/images/Batman-High-Res.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top;
+
+    img {
+      width: 320px;
+      height: 310px;
+    }
+  }
+
+  .featured-session {
+    margin-top: 5px;
+    height: 93vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .title {
+      font-size: 5rem;
+      color: black;
+    }
+
+    button {
+      width: 129px;
+      height: 49px;
+      font-size: 2rem;
+      background-color: black;
+      color: $off-white;
+      border: 3px solid black;
+      transition: 0.3s ease-in-out;
+
+      &:hover {
+        background-color: $off-white;
+        color: black;
+        cursor: pointer;
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+}
