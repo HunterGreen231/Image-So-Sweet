@@ -5,13 +5,13 @@
     align-items: center;
     justify-content: center;
 
-    background-image: url("../../static/images/Batman-High-Res.jpg");
+    background-image: url("../../static/images/_MG_2412-Edit.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: top;
 
     img {
-      width: 320px;
+      width: 350px;
       height: 310px;
     }
   }
@@ -29,8 +29,9 @@
     align-items: center;
 
     .title {
-      font-size: 5rem;
+      font-size: 4rem;
       color: black;
+      text-align: center;
     }
 
     button {
