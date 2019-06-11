@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import Logo from "../../../static/images/ImageSoSweet Watermark2 WHITE copy.png";
+
 export default class Home extends Component {
   constructor(props) {
     super(props);
@@ -28,7 +30,9 @@ export default class Home extends Component {
   render() {
     return (
       <div className="page-content">
-        <div className="hero-background" />
+        <div className="hero-background">
+          <img src={Logo} />
+        </div>
         <div
           className="featured-session"
           style={{
