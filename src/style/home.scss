@@ -39,18 +39,30 @@
       height: 49px;
       font-size: 2rem;
       background-color: black;
-      color: $off-white;
       border: 3px solid black;
       transition: 0.3s ease-in-out;
 
       &:hover {
         background-color: $off-white;
-        color: black;
         cursor: pointer;
+
+        .session-link {
+          color: black;
+        }
       }
 
       &:focus {
         outline: none;
+      }
+
+      .session-link {
+        color: $off-white;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+
+        &:hover {
+          color: black;
+        }
       }
     }
   }

@@ -58,6 +58,10 @@ export default class GalleryPage extends Component {
     }
   }
 
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   sleep = milliseconds => {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
   };
