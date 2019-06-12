@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { NavLink } from "react-router-dom";
+import Parralax from "../parralax-background";
 
 import Logo from "../../../static/images/ImageSoSweet Watermark2 WHITE copy.png";
 
@@ -42,7 +42,35 @@ export default class Home extends Component {
           <div className="gradient-overlay" />
         </div>
         <div className="about-wrapper">
-          <h1>Moms filler content goes here</h1>
+          <h1>Utah's Fantasy Photographer</h1>
+          <div className="about-content-wrapper">
+            <p>We specialize in bringing your dreams to life!</p>
+            <p>
+              Child and Adult sessions are available, We create your entire
+              look!
+            </p>
+            {/* <p>
+              ----- your favorite Prince or
+              Princess
+            </p> */}
+            <ul>
+              <li>Mermaids</li>
+              <li>Pirates</li>
+              <li>Fairies</li>
+              <li>Pixies</li>
+              <li>Trolls</li>
+              <li>Trolls</li>
+              <li>Your favorite Prince or Princess</li>
+            </ul>
+          </div>
+        </div>
+        <Parralax
+          backgroundObject={this.state.featuredSession}
+          title="Featured Session"
+          route={"/gallery"}
+        />
+        <div className="investment-wrapper">
+          <h1>Investment</h1>
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit.
             Voluptatibus cum error voluptates atque doloribus et voluptatum? Ut
@@ -64,20 +92,6 @@ export default class Home extends Component {
             et! Doloribus temporibus consectetur minus a!
           </p>
         </div>
-        <div
-          className="featured-session"
-          style={{
-            backgroundImage:
-              this.state.featuredSession.length > 0 &&
-              `url(${this.state.featuredSession[0].image_url})`
-          }}
-        >
-          <h1 className="title">Featured Session</h1>
-          <NavLink to="/gallery" className="session-link">
-            View
-          </NavLink>
-        </div>
-        <div style={{ backgroundColor: "black", height: "1000px" }} />
       </div>
     );
   }
