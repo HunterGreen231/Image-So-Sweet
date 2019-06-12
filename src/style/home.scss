@@ -82,27 +82,21 @@
     }
 
     .about-content-wrapper {
-      margin-bottom: 42px;
       p {
         color: $off-white;
         text-align: center;
         font-size: 2rem;
-      }
-      ul {
-        margin-top: 50px;
-        color: $off-white;
-        font-size: 2rem;
-        position: relative;
-        left: 345px;
-
-        li {
-          margin-top: 10px;
-        }
+        margin: 100px;
       }
     }
   }
 
   .investment-wrapper {
+    background-image: url("../../static/images/Investment-Background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
     border-top: 5px solid $off-white;
     display: flex;
     flex-direction: column;
@@ -110,13 +104,14 @@
     align-items: center;
 
     h1 {
-      color: $off-white;
+      color: black;
       margin: 41px;
-      font-size: 3rem;
+      font-size: 4rem;
     }
 
     p {
-      color: $off-white;
+      font-size: 2rem;
+      color: black;
       margin: 41px;
       text-align: center;
     }
