@@ -7,11 +7,15 @@
     display: flex !important;
   }
 
+  .nav-wrapper {
+    height: 60px;
+  }
+
   .divider {
     display: flex !important;
   }
 
-  .nav-bar-drop-down-wrapper-show {
+  .nav-bar-drop-down-wrapper {
     display: none !important;
   }
 
@@ -25,9 +29,23 @@
     }
   }
 
+  .gradient-overlay {
+    bottom: -60px !important;
+  }
+
   .featured-session {
     .title {
       font-size: 5rem;
+    }
+  }
+
+  .about-wrapper {
+    h1 {
+      font-size: 2.5rem !important;
+    }
+
+    p {
+      margin: 100px !important;
     }
   }
 }

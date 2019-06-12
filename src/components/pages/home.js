@@ -35,8 +35,34 @@ export default class Home extends Component {
   render() {
     return (
       <div className="page-content">
-        <div className="hero-background">
-          <img src={Logo} />
+        <div className="hero-gradient-wrapper">
+          <div className="hero-background">
+            <img src={Logo} />
+          </div>
+          <div className="gradient-overlay" />
+        </div>
+        <div className="about-wrapper">
+          <h1>Moms filler content goes here</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Voluptatibus cum error voluptates atque doloribus et voluptatum? Ut
+            nesciunt impedit velit tempore consequuntur, placeat quidem delectus
+            recusandae quibusdam, repudiandae veritatis autem. Rem possimus odit
+            tenetur eum nihil obcaecati reiciendis voluptatum dolorem recusandae
+            maxime facilis deserunt placeat adipisci nostrum quia cupiditate,
+            nam architecto! Unde iusto amet atque qui. Ad dolorum temporibus
+            mollitia. Quod fuga dolores, inventore optio eos iste consequatur.
+            Eaque alias voluptate assumenda numquam, repellendus, ex aliquid
+            soluta quo molestiae perferendis accusantium commodi tempore, ipsum
+            ipsa reprehenderit ratione hic. Ducimus, facere! Odio excepturi
+            dolorum ea sint magni debitis quo, alias dignissimos laboriosam
+            dolores velit voluptatem quaerat iste facilis, quae, ipsum
+            accusantium eligendi iure odit? Eveniet deleniti corrupti eligendi
+            nihil iure consequatur. Commodi harum quae a libero explicabo sint
+            odit fugit facere deserunt consectetur, distinctio, magni possimus,
+            veniam voluptatem unde animi minus itaque culpa eligendi laudantium
+            et! Doloribus temporibus consectetur minus a!
+          </p>
         </div>
         <div
           className="featured-session"
@@ -47,11 +73,9 @@ export default class Home extends Component {
           }}
         >
           <h1 className="title">Featured Session</h1>
-          <button>
-            <NavLink to="/gallery" className="session-link">
-              View
-            </NavLink>
-          </button>
+          <NavLink to="/gallery" className="session-link">
+            View
+          </NavLink>
         </div>
         <div style={{ backgroundColor: "black", height: "1000px" }} />
       </div>

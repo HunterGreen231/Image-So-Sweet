@@ -14,49 +14,45 @@ export default function NavBarDropdown(props) {
       }}
     >
       <div className="bar">
-        <button className="dropdown-button" onClick={() => handleToggle()}>
-          <NavLink
-            exact
-            to="/"
-            className="nav-link-dropdown"
-            activeClassName="nav-link-active"
-          >
-            Home
-          </NavLink>
-        </button>
+        <NavLink
+          exact
+          to="/"
+          className="nav-link-dropdown"
+          onClick={() => handleToggle()}
+          activeClassName="nav-link-active"
+        >
+          Home
+        </NavLink>
       </div>
       <div className="bar">
-        <button className="dropdown-button" onClick={() => handleToggle()}>
-          <NavLink
-            to="/available-locations"
-            className="nav-link-dropdown"
-            activeClassName="nav-link-active"
-          >
-            Available Locations
-          </NavLink>
-        </button>
+        <NavLink
+          to="/available-locations"
+          className="nav-link-dropdown"
+          onClick={() => handleToggle()}
+          activeClassName="nav-link-active"
+        >
+          Available Locations
+        </NavLink>
       </div>
       <div className="bar">
-        <button className="dropdown-button" onClick={() => handleToggle()}>
-          <NavLink
-            to="/gallery"
-            className="nav-link-dropdown"
-            activeClassName="nav-link-active"
-          >
-            Gallery
-          </NavLink>
-        </button>
+        <NavLink
+          to="/gallery"
+          className="nav-link-dropdown"
+          onClick={() => handleToggle()}
+          activeClassName="nav-link-active"
+        >
+          Gallery
+        </NavLink>
       </div>
       <div className="bar bar-bottom">
-        <button className="dropdown-button" onClick={() => handleToggle()}>
-          <NavLink
-            to="/availability"
-            className="nav-link-dropdown"
-            activeClassName="nav-link-active"
-          >
-            Availability
-          </NavLink>
-        </button>
+        <NavLink
+          to="/availability"
+          className="nav-link-dropdown"
+          onClick={() => handleToggle()}
+          activeClassName="nav-link-active"
+        >
+          Availability
+        </NavLink>
       </div>
     </div>
   );
