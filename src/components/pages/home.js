@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Parralax from "../parralax-background";
 
+import Parralax from "../parralax-background";
 import Logo from "../../../static/images/ImageSoSweet Watermark2 WHITE copy.png";
+import LocationsBackgroundImage from "../../../static/images/Locations-Background.jpg";
 
 export default class Home extends Component {
   constructor(props) {
@@ -80,6 +81,12 @@ export default class Home extends Component {
             et! Doloribus temporibus consectetur minus a!
           </p>
         </div>
+        <Parralax
+          backgroundObject={[]}
+          backgroundImage={LocationsBackgroundImage}
+          title="Locations"
+          route={"/locations"}
+        />
       </div>
     );
   }

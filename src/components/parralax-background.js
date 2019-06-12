@@ -7,8 +7,9 @@ export default function Parralax(props) {
       className="featured-session"
       style={{
         backgroundImage:
-          props.backgroundObject.length > 0 &&
-          `url(${props.backgroundObject[0].image_url})`
+          props.backgroundObject.length > 0
+            ? `url(${props.backgroundObject[0].image_url})`
+            : `url(${props.backgroundImage})`
       }}
     >
       <h1 className="title">{props.title}</h1>
