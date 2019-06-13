@@ -23,7 +23,7 @@
       height: 400px;
       background-image: linear-gradient(transparent, black);
       position: absolute;
-      bottom: 106px;
+      bottom: 0;
       z-index: 5;
     }
   }
@@ -33,7 +33,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;
+    // background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -76,7 +76,8 @@
 
     h1 {
       margin: 41px;
-      font-size: 3rem;
+      // font-size: 3rem;
+      font-size: 2rem;
       text-align: center;
       color: $off-white;
     }
@@ -88,7 +89,8 @@
         margin-left: 42px;
         color: $off-white;
         text-align: center;
-        font-size: 2rem;
+        // font-size: 2rem;
+        font-size: 1.5rem;
         margin-bottom: 42px;
       }
 
@@ -101,7 +103,8 @@
         li {
           font-family: "Playfair Display SC", serif;
           color: $off-white;
-          font-size: 2rem;
+          // font-size: 2rem;
+          font-size: 1.5rem;
         }
       }
     }
@@ -123,11 +126,13 @@
     h1 {
       color: black;
       margin: 41px;
-      font-size: 4rem;
+      // font-size: 4rem;
+      font-size: 3rem;
     }
 
     p {
-      font-size: 2rem;
+      // font-size: 2rem;
+      font-size: 1.5rem;
       color: black;
       margin: 41px;
       text-align: center;
