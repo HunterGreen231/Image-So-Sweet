@@ -72,28 +72,17 @@ export default class Home extends Component {
           title="Featured Session"
           route={"/gallery"}
         />
-        <div className="investment-wrapper">
-          <h1>Investment</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-            Voluptatibus cum error voluptates atque doloribus et voluptatum? Ut
-            nesciunt impedit velit tempore consequuntur, placeat quidem delectus
-            recusandae quibusdam, repudiandae veritatis autem. Rem possimus odit
-            tenetur eum nihil obcaecati reiciendis voluptatum dolorem recusandae
-            maxime facilis deserunt placeat adipisci nostrum quia cupiditate,
-            nam architecto! Unde iusto amet atque qui. Ad dolorum temporibus
-            mollitia. Quod fuga dolores, inventore optio eos iste consequatur.
-            Eaque alias voluptate assumenda numquam, repellendus, ex aliquid
-            soluta quo molestiae perferendis accusantium commodi tempore, ipsum
-            ipsa reprehenderit ratione hic. Ducimus, facere! Odio excepturi
-            dolorum ea sint magni debitis quo, alias dignissimos laboriosam
-            dolores velit voluptatem quaerat iste facilis, quae, ipsum
-            accusantium eligendi iure odit? Eveniet deleniti corrupti eligendi
-            nihil iure consequatur. Commodi harum quae a libero explicabo sint
-            odit fugit facere deserunt consectetur, distinctio, magni possimus,
-            veniam voluptatem unde animi minus itaque culpa eligendi laudantium
-            et! Doloribus temporibus consectetur minus a!
-          </p>
+        <div className="investment-overlay-wrapper">
+          <div className="investment-background" />
+          <div className="investment-content">
+            <h1>Investment</h1>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Voluptatibus cum error voluptates atque doloribus et voluptatum?
+              Ut nesciunt impedit velit tempore consequuntur, placeat quidem
+              delectus recusandae quibusdam, repudiandae veritatis autem. Rem
+            </p>
+          </div>
         </div>
         <Parralax
           backgroundObject={[]}

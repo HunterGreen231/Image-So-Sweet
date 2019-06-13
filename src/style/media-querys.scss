@@ -58,10 +58,17 @@
     }
   }
 
-  .investment-wrapper {
+  .investment-background {
     height: 100vh !important;
+  }
+
+  .investment-content {
+    h1 {
+      font-size: 4rem !important;
+    }
+
     p {
-      margin: 100px !important;
+      margin: 75px !important;
     }
   }
 }
