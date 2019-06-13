@@ -29,20 +29,27 @@
     }
   }
 
-  .gradient-overlay {
-    bottom: -60px !important;
-  }
-
   .featured-session {
+    background-attachment: fixed !important;
     .title {
-      font-size: 5rem;
+      font-size: 5rem !important;
     }
   }
 
   .about-wrapper {
+    h1 {
+      font-size: 3rem !important;
+    }
     .about-content-wrapper {
+      p {
+        font-size: 2rem;
+      }
       ul {
         flex-direction: row !important;
+
+        li {
+          font-size: 2rem !important;
+        }
       }
     }
   }
