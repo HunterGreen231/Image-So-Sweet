@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 
+import Contact from "../contact";
 import Parralax from "../parralax-background";
 import Logo from "../../../static/images/ImageSoSweet Watermark2 WHITE copy.png";
 import LocationsBackgroundImage from "../../../static/images/Locations-Background.jpg";
@@ -100,6 +101,7 @@ export default class Home extends Component {
           title="Locations"
           route={"/locations"}
         />
+        <Contact />
       </div>
     );
   }

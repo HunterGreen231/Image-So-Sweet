@@ -6,6 +6,11 @@ export default function NavBarDropdown(props) {
     props.setDropDown(!props.dropDown);
   };
 
+  const handleToggleScroll = () => {
+    props.scrollToContact();
+    handleToggle();
+  };
+
   return (
     <div
       className="nav-bar-drop-down-wrapper"
@@ -44,7 +49,7 @@ export default function NavBarDropdown(props) {
           Gallery
         </NavLink>
       </div>
-      <div className="bar bar-bottom">
+      <div className="bar">
         <NavLink
           to="/availability"
           className="nav-link-dropdown"
@@ -53,6 +58,14 @@ export default function NavBarDropdown(props) {
         >
           Availability
         </NavLink>
+      </div>
+      <div className="bar bar-bottom">
+        <button
+          onClick={() => handleToggleScroll()}
+          className="contact-link-dropdown"
+        >
+          Contact
+        </button>
       </div>
     </div>
   );

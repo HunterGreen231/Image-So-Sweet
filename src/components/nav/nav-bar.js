@@ -25,18 +25,30 @@ const NavBar = props => {
           </NavLink>
         </div>
         <h1 className="divider">/</h1>
-        <div className="nav-link">
+        {/* <div className="nav-link">
           <NavLink to="/availability" activeClassName="nav-link-active">
             Availability
           </NavLink>
         </div>
-        <h1 className="divider">/</h1>
+        <h1 className="divider">/</h1> */}
         <div className="nav-link">
           <NavLink to="/available-locations" activeClassName="nav-link-active">
             Available Locations
           </NavLink>
         </div>
-        {/* <NavLink to={}>Contact</NavLink> */}
+        <h1 className="divider">/</h1>
+        <div className="nav-link">
+          <NavLink to="/about" activeClassName="nav-link-active">
+            About
+          </NavLink>
+        </div>
+        <h1 className="divider">/</h1>
+        <button
+          onClick={() => props.scrollToContact()}
+          className="contact-link"
+        >
+          Contact
+        </button>
         <div className="hamburger-wrapper">
           <button onClick={() => handleHamBurgerClick()}>
             <FontAwesomeIcon icon={faBars} className="hamburger" />

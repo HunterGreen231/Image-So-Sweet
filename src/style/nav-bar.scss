@@ -35,6 +35,17 @@
     }
   }
 
+  .contact-link {
+    display: none;
+    @include link;
+    background-color: black;
+    border: none;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
   .hamburger-wrapper {
     display: flex;
     justify-content: center;

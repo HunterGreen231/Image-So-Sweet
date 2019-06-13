@@ -3,15 +3,19 @@
     display: none !important;
   }
 
-  .nav-link {
-    display: flex !important;
-  }
-
   .nav-wrapper {
     height: 60px;
+
+    .nav-link {
+      display: flex !important;
+    }
+
+    .divider {
+      display: flex !important;
+    }
   }
 
-  .divider {
+  .contact-link {
     display: flex !important;
   }
 
@@ -55,6 +59,7 @@
   }
 
   .investment-wrapper {
+    height: 100vh !important;
     p {
       margin: 100px !important;
     }
