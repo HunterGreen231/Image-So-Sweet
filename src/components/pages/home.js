@@ -45,12 +45,25 @@ export default class Home extends Component {
         <div className="about-wrapper">
           <h1>Utah's Fantasy Photographer</h1>
           <div className="about-content-wrapper">
-            <p>
-              We specialize in bringing your dreams to life! - Child and Adult
-              sessions are available, We create your entire look! -
-              Mermaids-Pirates-Fairies-Pixies-Trolls- your favorite Prince or
-              Princess
+            <p className="sub-heading">
+              We specialize in bringing your dreams to life!
             </p>
+            <p>
+              Child and Adult sessions are available, We create your entire
+              look!
+            </p>
+            <ul>
+              <li>Mermaids</li>
+              <li>Pirates</li>
+              <li>Fairies</li>
+              <li>Pixies</li>
+              <li>Princess</li>
+              {/* <li>Your favorite Prince and Princess</li> */}
+            </ul>
+            {/* <h1>
+              Mermaids Pirates Fairies Pixies Trolls Your favorite Prince and
+              Princess
+            </h1> */}
           </div>
         </div>
         <Parralax

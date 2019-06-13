@@ -23,7 +23,7 @@
       height: 400px;
       background-image: linear-gradient(transparent, black);
       position: absolute;
-      bottom: 271px;
+      bottom: 106px;
       z-index: 5;
     }
   }
@@ -82,11 +82,27 @@
     }
 
     .about-content-wrapper {
+      width: 100%;
       p {
+        margin-right: 42px;
+        margin-left: 42px;
         color: $off-white;
         text-align: center;
         font-size: 2rem;
-        margin: 100px;
+        margin-bottom: 42px;
+      }
+
+      ul {
+        margin-bottom: 42px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        li {
+          font-family: "Playfair Display SC", serif;
+          color: $off-white;
+          font-size: 2rem;
+        }
       }
     }
   }
@@ -96,7 +112,7 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 100%;
     border-top: 5px solid black;
     border-bottom: 5px solid black;
     display: flex;

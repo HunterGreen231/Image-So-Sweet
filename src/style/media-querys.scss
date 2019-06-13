@@ -39,11 +39,13 @@
     }
   }
 
-  // .about-wrapper {
-  //   .about-content-wrapper {
-
-  //   }
-  // }
+  .about-wrapper {
+    .about-content-wrapper {
+      ul {
+        flex-direction: row !important;
+      }
+    }
+  }
 
   .investment-wrapper {
     p {
