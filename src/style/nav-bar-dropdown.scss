@@ -26,6 +26,10 @@
     &:focus {
       outline: none;
     }
+
+    &:hover {
+      color: $off-white;
+    }
   }
 
   .nav-link-dropdown {

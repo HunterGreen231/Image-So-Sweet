@@ -59,6 +59,7 @@
   }
 
   .investment-background {
+    background-image: url("../../static/images/Investment-Background.jpg") !important;
     height: 100vh !important;
   }
 
@@ -69,6 +70,40 @@
 
     p {
       margin: 75px !important;
+    }
+  }
+}
+
+@media (max-width: 48em) {
+  .contact-background {
+    height: 1140px !important;
+  }
+
+  .form-wrapper {
+    width: 70% !important;
+
+    .two-column {
+      grid-template-columns: 1fr !important;
+
+      input {
+        margin-top: 10px !important;
+      }
+    }
+
+    .three-column {
+      grid-template-columns: 1fr !important;
+
+      input {
+        margin-top: 10px !important;
+      }
+    }
+
+    textarea {
+      margin-top: 10px !important;
+    }
+
+    button {
+      margin-top: 40px !important;
     }
   }
 }
