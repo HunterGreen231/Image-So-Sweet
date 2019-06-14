@@ -60,28 +60,57 @@
 
   .investment-background {
     background-image: url("../../static/images/Investment-Background.jpg") !important;
-    height: 100vh !important;
+    height: 1100px !important;
   }
 
   .investment-content {
-    h1 {
+    width: 40% !important;
+    margin-left: 200px !important;
+    align-items: flex-start !important;
+    .fee-left {
+      font-size: 2rem !important;
+      margin-top: 70px !important;
+    }
+
+    .fee-right {
+      margin-top: 70px !important;
+    }
+
+    .investment-title {
       font-size: 4rem !important;
     }
 
     p {
-      margin: 75px !important;
+      width: 100% !important;
+      margin-top: 70px !important;
+      margin-left: 0px !important;
+      text-align: left !important;
     }
   }
 }
 
+@media (max-width: 768px) and (min-width: 48em) {
+  .investment-content {
+    margin-left: 135px !important;
+  }
+}
+
 @media (max-width: 48em) {
-  .contact-background {
-    height: 1140px !important;
+  .contact-wrapper {
+    .contact-background {
+      height: 1140px !important;
+    }
+
+    h1 {
+      align-self: center !important;
+      margin-left: 0px !important;
+      margin-bottom: 55px !important;
+    }
   }
 
   .form-wrapper {
     width: 70% !important;
-
+    margin-bottom: 0px !important;
     .two-column {
       grid-template-columns: 1fr !important;
 

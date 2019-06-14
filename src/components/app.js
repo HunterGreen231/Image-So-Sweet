@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import $ from "jquery";
 
+import About from "./pages/about";
 import NavBar from "./nav/nav-bar";
 import NavBarDropDown from "./nav/nav-bar-dropdown";
 import Home from "./pages/home";
@@ -39,6 +40,7 @@ export default function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/gallery" component={Gallery} />} />
+            <Route path="/about" component={About} />
             <Route component={NoMatch} />
           </Switch>
         </div>

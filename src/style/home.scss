@@ -59,7 +59,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-
+      margin-top: 225px;
       &:hover {
         color: black;
         background-color: $off-white;
@@ -117,39 +117,52 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    height: 1200px;
+    height: 1020px;
     border-top: 5px solid black;
     border-bottom: 5px solid black;
   }
 
   .investment-content {
-    width: 100%;
+    margin-left: 62px;
+    width: 78%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: left;
 
     position: absolute;
     bottom: 0;
 
-    h1 {
+    .investment-title {
       text-shadow: 4px 4px black;
       color: $off-white;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       // font-size: 4rem;
       font-size: 3rem;
     }
 
+    .fee-left {
+      margin-top: 60px;
+      text-shadow: 4px 4px black;
+      width: 74%;
+    }
+
+    .fee-right {
+      margin-top: 60px;
+      text-shadow: 4px 4px black;
+      width: 74%;
+    }
+
     p {
+      margin-top: 60px;
       text-shadow: 4px 4px black;
       // font-size: 2rem;
       font-size: 1.5rem;
       color: $off-white;
-      margin-left: 30px;
-      margin-right: 30px;
-      margin-bottom: 50px;
-      text-align: center;
+      text-align: left;
+      line-height: 30px;
+      width: 100%;
     }
   }
 

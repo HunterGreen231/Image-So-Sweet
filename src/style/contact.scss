@@ -8,14 +8,16 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 740px;
+    height: 870px;
   }
 
   h1 {
     text-shadow: 4px 4px black;
     padding-top: 60px;
     font-size: 3rem;
-    margin-bottom: 42px;
+    margin-bottom: 133px;
+    margin-left: 190px;
+    align-self: flex-start;
   }
 
   .contact-content {
@@ -28,7 +30,7 @@
     width: 100%;
     .form-wrapper {
       width: 80%;
-      margin-top: 20px;
+      margin-bottom: 63px;
       display: flex;
       flex-direction: column;
 
