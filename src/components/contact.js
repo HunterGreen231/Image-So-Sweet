@@ -54,7 +54,7 @@ export default class Contact extends Component {
                 className="input-field"
               />
             </div>
-            <textarea name="message" placeholder="Comments/Messages" />
+            <textarea name="message" placeholder="Message" />
             <button type="submit">Send Mail</button>
           </form>
         </div>
