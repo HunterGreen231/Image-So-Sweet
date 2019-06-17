@@ -51,12 +51,12 @@ export default function NavBarDropdown(props) {
       </div>
       <div className="bar">
         <NavLink
-          to="/availability"
+          to="/about"
           className="nav-link-dropdown"
           onClick={() => handleToggle()}
           activeClassName="nav-link-active"
         >
-          Availability
+          About
         </NavLink>
       </div>
       <div className="bar bar-bottom">

@@ -3,6 +3,7 @@ import Lightbox from "react-images";
 import axios from "axios";
 
 import Session from "../sessions/session";
+import Contact from "../contact";
 
 export default class GalleryPage extends Component {
   constructor() {
@@ -186,11 +187,8 @@ export default class GalleryPage extends Component {
               apiImageLength={this.state.apiImageLength}
             />
           </div>
-        ) : (
-          <div>
-            <h1 style={{ color: "white" }}>loading</h1>
-          </div>
-        )}
+        ) : null}
+        <Contact />
       </div>
     );
   }

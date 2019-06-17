@@ -89,6 +89,17 @@
   }
 }
 
+@media (min-width: 1050px) {
+  .about-page-wrapper {
+    grid-template-columns: 1fr 1fr !important;
+    height: calc(100vh - 60px);
+
+    p {
+      text-align: left !important;
+    }
+  }
+}
+
 @media (max-width: 768px) and (min-width: 48em) {
   .investment-content {
     margin-left: 135px !important;

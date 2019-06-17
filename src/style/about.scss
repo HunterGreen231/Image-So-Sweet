@@ -1,7 +1,31 @@
 .about-page-wrapper {
-  img {
-    margin-left: 50px;
-    width: 800px;
-    height: 1000px;
+  display: grid;
+  grid-template-columns: 1fr;
+  .image-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 550px;
+      height: 500px;
+    }
+  }
+
+  .text-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+
+    p {
+      padding-right: 80px;
+      padding-left: 80px;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 25px;
+      letter-spacing: 1px;
+    }
   }
 }
