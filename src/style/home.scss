@@ -82,7 +82,9 @@
   }
 
   .text-background-right {
-    right: -13px !important;
+    display: flex;
+    justify-content: flex-end;
+    right: 13px !important;
     left: initial !important;
   }
 

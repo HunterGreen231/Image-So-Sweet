@@ -17,17 +17,11 @@ export default function Parralax(props) {
             : `url(${props.backgroundImage})`
       }}
     >
-      <h1 className={`title ${props.right ? classNames.titleRight : ""}`}>
-        {props.title}
-      </h1>
+      <h1 className="title">{props.title}</h1>
       <NavLink to={props.route} className="session-link">
         View
       </NavLink>
-      <div
-        className={`text-background ${
-          props.right ? classNames.textBackgroundRight : ""
-        }`}
-      />
+      <div className="text-background" />
     </div>
   );
 }
