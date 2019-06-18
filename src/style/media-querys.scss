@@ -89,22 +89,19 @@
   }
 
   .about-page-wrapper {
-    img {
-      width: 85% !important;
-      height: 80% !important;
+    grid-template-columns: 1fr 1fr !important;
+    height: calc(100vh - 60px);
+
+    .image-wrapper {
+      height: 100% !important;
+    }
+    p {
+      text-align: left !important;
     }
   }
 }
 
 @media (min-width: 1050px) {
-  .about-page-wrapper {
-    grid-template-columns: 1fr 1fr !important;
-    height: calc(100vh - 60px);
-
-    p {
-      text-align: left !important;
-    }
-  }
 }
 
 @media (max-width: 768px) and (min-width: 48em) {

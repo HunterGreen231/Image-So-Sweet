@@ -10,9 +10,7 @@ export default function() {
   return (
     <div className="page-content">
       <div className="about-page-wrapper">
-        <div className="image-wrapper">
-          <img src={ProfilePicture} />
-        </div>
+        <div className="image-wrapper" />
         <div className="text-wrapper">
           <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim
