@@ -54,11 +54,21 @@ export default class Home extends Component {
               look!
             </p>
             <ul>
-              <li>Mermaids</li>
-              <li>Pirates</li>
-              <li>Fairies</li>
-              <li>Pixies</li>
-              <li>Princess</li>
+              <li>
+                <span>Mermaids</span>
+              </li>
+              <li>
+                <span>Pirates</span>
+              </li>
+              <li>
+                <span>Fairies</span>
+              </li>
+              <li>
+                <span>Pixies</span>
+              </li>
+              <li>
+                <span>Princess</span>
+              </li>
               {/* <li>Your favorite Prince and Princess</li> */}
             </ul>
             {/* <h1>
@@ -73,19 +83,21 @@ export default class Home extends Component {
           route={"/gallery"}
         />
         <div className="investment-overlay-wrapper">
-          <div className="investment-background" />
-          <div className="investment-content">
-            <h1 className="investment-title">Investment</h1>
-            <h1 className="fee-left">SESSION RETAINER FEE / $100-$350</h1>
-            <h1 className="fee-right">DIGITALS BEGIN AT \ $250</h1>
-            <h1 className="fee-left">PRODUCT BEGINS AT \ $400</h1>
-            <p>
-              We provide a complete stylized session that is unique to every
-              client. From starting concept to finishing touches my team of
-              artists and I create your look you've been dreaming about for
-              years. Tell us your ideas for the session and we will bring them
-              to life !
-            </p>
+          <div className="investment-background">
+            <div className="investment-overlay" />
+            <div className="investment-content">
+              <h1 className="investment-title">Investment</h1>
+              <h1 className="fee-left">SESSION RETAINER FEE / $100-$350</h1>
+              <h1 className="fee-right">DIGITALS BEGIN AT \ $250</h1>
+              <h1 className="fee-left">PRODUCT BEGINS AT \ $400</h1>
+              <p>
+                We provide a complete stylized session that is unique to every
+                client. From starting concept to finishing touches my team of
+                artists and I create your look you've been dreaming about for
+                years. Tell us your ideas for the session and we will bring them
+                to life !
+              </p>
+            </div>
           </div>
         </div>
         <Parralax
@@ -93,6 +105,7 @@ export default class Home extends Component {
           backgroundImage={LocationsBackgroundImage}
           title="Locations"
           route={"/locations"}
+          right={true}
         />
         <Contact />
       </div>

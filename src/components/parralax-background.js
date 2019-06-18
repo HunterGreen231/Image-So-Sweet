@@ -2,6 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Parralax(props) {
+  const classNames = {
+    textBackgroundRight: "text-background-right",
+    titleRight: "title-right"
+  };
+
   return (
     <div
       className="featured-session"
@@ -12,10 +17,17 @@ export default function Parralax(props) {
             : `url(${props.backgroundImage})`
       }}
     >
-      <h1 className="title">{props.title}</h1>
+      <h1 className={`title ${props.right ? classNames.titleRight : ""}`}>
+        {props.title}
+      </h1>
       <NavLink to={props.route} className="session-link">
         View
       </NavLink>
+      <div
+        className={`text-background ${
+          props.right ? classNames.textBackgroundRight : ""
+        }`}
+      />
     </div>
   );
 }
