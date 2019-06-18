@@ -93,15 +93,14 @@
     height: calc(100vh - 60px);
 
     .image-wrapper {
-      height: 100% !important;
+      height: 80% !important;
+      width: 80% !important;
+      min-width: 400px;
     }
     p {
       text-align: left !important;
     }
   }
-}
-
-@media (min-width: 1050px) {
 }
 
 @media (max-width: 768px) and (min-width: 48em) {
