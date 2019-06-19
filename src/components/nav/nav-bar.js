@@ -31,12 +31,12 @@ const NavBar = props => {
           </NavLink>
         </div>
         <h1 className="divider">/</h1> */}
-        <div className="nav-link">
+        {/* <div className="nav-link">
           <NavLink to="/available-locations" activeClassName="nav-link-active">
             Available Locations
           </NavLink>
-        </div>
-        <h1 className="divider">/</h1>
+        </div> */}
+        {/* <h1 className="divider">/</h1> */}
         <div className="nav-link">
           <NavLink to="/about" activeClassName="nav-link-active">
             About

@@ -29,7 +29,7 @@ export default function NavBarDropdown(props) {
           Home
         </NavLink>
       </div>
-      <div className="bar">
+      {/* <div className="bar">
         <NavLink
           to="/available-locations"
           className="nav-link-dropdown"
@@ -38,7 +38,7 @@ export default function NavBarDropdown(props) {
         >
           Available Locations
         </NavLink>
-      </div>
+      </div> */}
       <div className="bar">
         <NavLink
           to="/gallery"
