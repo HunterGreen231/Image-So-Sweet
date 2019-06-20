@@ -27,7 +27,7 @@ export default class Contact extends Component {
 
     axios
       .post(
-        "https://image-so-sweet-api.herokuapp.com/email-form",
+        "https://image-so-sweet-form-api.herokuapp.com/email-form",
         this.buildForm()
       )
       .then(function(response) {
@@ -39,17 +39,17 @@ export default class Contact extends Component {
   }
 
   buildForm(event) {
-    let formData = new FormData();
-
-    formData.append("firstName", this.state.firstName);
-    formData.append("lastName", this.state.lastName);
-    formData.append("childsName", this.state.childsName);
-    formData.append("email", this.state.email);
-    formData.append("fantasyTheme", this.state.fantasyTheme);
-    formData.append("location", this.state.location);
-    formData.append("phoneNumber", this.state.phoneNumber);
-    formData.append("referredBy", this.state.referredBy);
-    formData.append("message", this.state.message);
+    let formData = {
+      childsName: this.state.childsName,
+      email: this.state.email,
+      fantasyTheme: this.state.fantasyTheme,
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      location: this.state.location,
+      message: this.state.message,
+      phoneNumber: this.state.phoneNumber,
+      referredBy: this.state.referredBy
+    };
 
     return formData;
   }

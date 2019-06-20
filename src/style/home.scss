@@ -1,4 +1,17 @@
 .page-content {
+  .loader {
+    height: calc(100vh - 60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .fa-spin {
+      color: $off-white;
+      font-size: 2.5rem;
+    }
+  }
+
   .hero-gradient-wrapper {
     position: relative;
     .hero-background {

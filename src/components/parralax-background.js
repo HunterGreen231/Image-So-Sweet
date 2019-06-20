@@ -2,19 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 export default function Parralax(props) {
-  const classNames = {
-    textBackgroundRight: "text-background-right",
-    titleRight: "title-right"
-  };
-
   return (
     <div
       className="featured-session"
       style={{
-        backgroundImage:
-          props.backgroundObject.length > 0
-            ? `url(${props.backgroundObject[0].image_url})`
-            : `url(${props.backgroundImage})`
+        backgroundImage: `url(${props.backgroundImage})`
       }}
     >
       <h1 className="title">{props.title}</h1>
