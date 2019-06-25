@@ -20,10 +20,30 @@ export default class Contact extends Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.buildForm = this.buildForm.bind(this);
+    this.checkFields = this.checkFields.bind(this);
   }
+
+  checkFields = () => {
+    if (this.state.firstName) {
+    } else {
+      console.log("false");
+    }
+  };
 
   handleSubmit(event) {
     event.preventDefault();
+
+    this.setState({
+      firstName: "",
+      lastName: "",
+      email: "",
+      phoneNumber: "",
+      fantasyTheme: "",
+      location: "",
+      childsName: "",
+      referredBy: "",
+      message: ""
+    });
 
     axios
       .post(
@@ -75,6 +95,9 @@ export default class Contact extends Component {
                 value={this.state.firstName}
                 onChange={this.handleChange}
               />
+              {/* <p style={{ position: "absolute", left: "0px" }}>
+                Required Field
+              </p> */}
               <input
                 name="lastName"
                 placeholder="Last Name"
