@@ -30,10 +30,6 @@ export default class Contact extends Component {
     this.handleSuccessMessage = this.handleSuccessMessage.bind(this);
   }
 
-  sleep = milliseconds => {
-    return new Promise(resolve => setTimeout(resolve, milliseconds));
-  };
-
   checkIfPhoneNumber = () => {
     const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     if (phoneRegex.test(this.state.phoneNumber)) {
