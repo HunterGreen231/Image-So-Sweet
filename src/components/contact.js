@@ -75,7 +75,6 @@ export default class Contact extends Component {
   }
 
   handleSuccessMessage() {
-    console.log("Hit");
     this.setState({
       formMessage: "Email sent",
       formMessageShow: true
