@@ -8,14 +8,14 @@
     background-size: cover;
     background-position: center;
     width: 100%;
-    height: 870px;
+    height: 700px;
   }
 
-  h1 {
+  .contact-title {
     text-shadow: 3px 3px black;
     padding-top: 60px;
     font-size: 3rem;
-    margin-bottom: 133px;
+    margin-bottom: 50px;
     margin-left: 190px;
     align-self: flex-start;
     margin-left: 10%;
@@ -31,7 +31,7 @@
     width: 100%;
     .form-wrapper {
       width: 80%;
-      margin-bottom: 63px;
+      margin-bottom: 30px;
       display: flex;
       flex-direction: column;
 
@@ -96,29 +96,54 @@
         color: $off-white;
       }
 
-      button {
-        margin-top: 20px;
-        font-size: 2rem;
-        margin-bottom: 100px;
-        width: 129px;
-        height: 49px;
-        align-self: center;
-        background-color: black;
-        color: $off-white;
-        border: none;
-        transition: 0.2s ease-in-out;
-        border: 2px solid $off-white;
-        box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+      .submit-button-message-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
 
-        &:hover {
-          border: 2px solid black;
-          background-color: $off-white;
-          color: black;
-          cursor: pointer;
+        button {
+          margin-top: 20px;
+          font-size: 2rem;
+          margin-bottom: 20px;
+          width: 129px;
+          height: 49px;
+          align-self: center;
+          background-color: black;
+          color: $off-white;
+          border: none;
+          transition: 0.2s ease-in-out;
+          border: 2px solid $off-white;
+          box-shadow: 4px 4px 5px 0px rgba(0, 0, 0, 0.75);
+
+          &:hover {
+            border: 2px solid black;
+            background-color: $off-white;
+            color: black;
+            cursor: pointer;
+          }
+
+          &:focus {
+            outline: none;
+          }
         }
 
-        &:focus {
-          outline: none;
+        .error-message-show {
+          opacity: 1;
+          transition: 0.5s ease-in-out;
+          font-size: 2rem;
+          color: $off-white;
+          text-shadow: 3px 3px black;
+          margin-bottom: 20px;
+        }
+
+        .error-message-hidden {
+          opacity: 0;
+          transition: 1s ease-in-out;
+          font-size: 2rem;
+          color: $off-white;
+          text-shadow: 3px 3px black;
+          margin-bottom: 20px;
         }
       }
     }

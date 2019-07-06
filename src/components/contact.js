@@ -14,51 +14,79 @@ export default class Contact extends Component {
       location: "",
       childsName: "",
       referredBy: "",
-      message: ""
+      message: "",
+      formMessageShow: false,
+      formMessage: "* Please enter a valid phone number or email"
+    };
+
+    this.classNames = {
+      show: "error-message-show",
+      hide: "error-message-hidden"
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.buildForm = this.buildForm.bind(this);
-    this.checkFields = this.checkFields.bind(this);
+    this.handleSuccessMessage = this.handleSuccessMessage.bind(this);
   }
 
-  checkFields = () => {
-    if (this.state.firstName) {
+  sleep = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+  };
+
+  checkIfPhoneNumber = () => {
+    const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
+    if (phoneRegex.test(this.state.phoneNumber)) {
+      return true;
     } else {
-      console.log("false");
+      return false;
     }
   };
 
   handleSubmit(event) {
     event.preventDefault();
-
-    this.setState({
-      firstName: "",
-      lastName: "",
-      email: "",
-      phoneNumber: "",
-      fantasyTheme: "",
-      location: "",
-      childsName: "",
-      referredBy: "",
-      message: ""
-    });
-
-    axios
-      .post(
-        "https://image-so-sweet-form-api.herokuapp.com/email-form",
-        this.buildForm()
-      )
-      .then(function(response) {
-        console.log(response);
-      })
-      .catch(function(error) {
-        console.log(error);
+    if (this.checkIfPhoneNumber()) {
+      this.setState({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        fantasyTheme: "",
+        location: "",
+        childsName: "",
+        referredBy: "",
+        message: ""
       });
+
+      axios
+        .post(
+          "https://image-so-sweet-form-api.herokuapp.com/email-form",
+          this.buildForm()
+        )
+        .then(function(response) {
+          console.log("Email sent");
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+
+      this.handleSuccessMessage();
+    } else {
+      this.setState({
+        formMessageShow: true
+      });
+    }
   }
 
-  buildForm(event) {
+  handleSuccessMessage() {
+    console.log("Hit");
+    this.setState({
+      formMessage: "Email sent",
+      formMessageShow: true
+    });
+  }
+
+  buildForm() {
     let formData = {
       childsName: this.state.childsName,
       email: this.state.email,
@@ -85,7 +113,7 @@ export default class Contact extends Component {
       <div className="contact-wrapper">
         <div className="contact-background" />
         <div className="contact-content">
-          <h1>Contact</h1>
+          <h1 className="contact-title">Contact</h1>
           <form className="form-wrapper" onSubmit={this.handleSubmit}>
             <div className="three-column">
               <input
@@ -94,16 +122,15 @@ export default class Contact extends Component {
                 className="input-field"
                 value={this.state.firstName}
                 onChange={this.handleChange}
+                required
               />
-              {/* <p style={{ position: "absolute", left: "0px" }}>
-                Required Field
-              </p> */}
               <input
                 name="lastName"
                 placeholder="Last Name"
                 className="input-field"
                 value={this.state.lastName}
                 onChange={this.handleChange}
+                required
               />
               <input
                 name="email"
@@ -111,6 +138,7 @@ export default class Contact extends Component {
                 className="input-field"
                 value={this.state.email}
                 onChange={this.handleChange}
+                required
               />
               <input
                 name="phoneNumber"
@@ -118,6 +146,7 @@ export default class Contact extends Component {
                 className="input-field"
                 value={this.state.phoneNumber}
                 onChange={this.handleChange}
+                required
               />
               <input
                 name="fantasyTheme"
@@ -125,6 +154,7 @@ export default class Contact extends Component {
                 className="input-field"
                 value={this.state.fantasyTheme}
                 onChange={this.handleChange}
+                required
               />
               <input
                 name="location"
@@ -132,6 +162,7 @@ export default class Contact extends Component {
                 className="input-field"
                 value={this.state.location}
                 onChange={this.handleChange}
+                required
               />
             </div>
             <div className="two-column">
@@ -141,6 +172,7 @@ export default class Contact extends Component {
                 className="input-field"
                 value={this.state.childsName}
                 onChange={this.handleChange}
+                required
               />
               <input
                 name="referredBy"
@@ -148,6 +180,7 @@ export default class Contact extends Component {
                 className="input-field"
                 value={this.state.referredBy}
                 onChange={this.handleChange}
+                required
               />
             </div>
             <textarea
@@ -155,8 +188,20 @@ export default class Contact extends Component {
               placeholder="Message"
               value={this.state.message}
               onChange={this.handleChange}
+              required
             />
-            <button type="submit">Send Mail</button>
+            <div className="submit-button-message-wrapper">
+              <button type="submit">Send Mail</button>
+              <p
+                className={
+                  this.state.formMessageShow
+                    ? this.classNames.show
+                    : this.classNames.hide
+                }
+              >
+                {this.state.formMessage}
+              </p>
+            </div>
           </form>
         </div>
       </div>
