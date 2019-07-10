@@ -39,9 +39,18 @@ export default class Contact extends Component {
     }
   };
 
+  checkIfEmail = () => {
+    const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    if (emailRegex.test(this.state.email)) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   handleSubmit(event) {
     event.preventDefault();
-    if (this.checkIfPhoneNumber()) {
+    if (this.checkIfPhoneNumber() && this.checkIfEmail()) {
       this.setState({
         firstName: "",
         lastName: "",

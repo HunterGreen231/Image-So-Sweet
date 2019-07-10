@@ -99,7 +99,7 @@ export default class Home extends Component {
                     every client. From starting concept to finishing touches my
                     team of artists and I create your look you've been dreaming
                     about for years. Tell us your ideas for the session and we
-                    will bring them to life !
+                    will bring them to life! Contact for more information.
                   </p>
                 </div>
               </div>
