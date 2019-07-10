@@ -16,12 +16,15 @@ export default class Contact extends Component {
       referredBy: "",
       message: "",
       formMessageShow: false,
-      formMessage: "* Please enter a valid phone number or email"
+      formMessage: "Email sent",
+      emailHighlight: false,
+      phoneHighlight: false
     };
 
     this.classNames = {
-      show: "error-message-show",
-      hide: "error-message-hidden"
+      show: "contact-message-show",
+      hide: "contact-message-hidden",
+      highlight: "warning"
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -33,8 +36,14 @@ export default class Contact extends Component {
   checkIfPhoneNumber = () => {
     const phoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     if (phoneRegex.test(this.state.phoneNumber)) {
+      this.setState({
+        phoneHighlight: false
+      });
       return true;
     } else {
+      this.setState({
+        phoneHighlight: true
+      });
       return false;
     }
   };
@@ -42,8 +51,14 @@ export default class Contact extends Component {
   checkIfEmail = () => {
     const emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
     if (emailRegex.test(this.state.email)) {
+      this.setState({
+        emailHighlight: false
+      });
       return true;
     } else {
+      this.setState({
+        emailHighlight: true
+      });
       return false;
     }
   };
@@ -78,15 +93,26 @@ export default class Contact extends Component {
       this.handleSuccessMessage();
     } else {
       this.setState({
+        formMessage: "* Please enter a valid phone number or email",
         formMessageShow: true
       });
     }
   }
 
+  sleep = milliseconds => {
+    return new Promise(resolve => setTimeout(resolve, milliseconds));
+  };
+
   handleSuccessMessage() {
     this.setState({
       formMessage: "Email sent",
       formMessageShow: true
+    });
+
+    this.sleep(3000).then(() => {
+      this.setState({
+        formMessageShow: false
+      });
     });
   }
 
@@ -139,7 +165,8 @@ export default class Contact extends Component {
               <input
                 name="email"
                 placeholder="Email"
-                className="input-field"
+                className={`input-field ${this.state.emailHighlight &&
+                  this.classNames.highlight}`}
                 value={this.state.email}
                 onChange={this.handleChange}
                 required
@@ -147,7 +174,8 @@ export default class Contact extends Component {
               <input
                 name="phoneNumber"
                 placeholder="Phone Number"
-                className="input-field"
+                className={`input-field ${this.state.phoneHighlight &&
+                  this.classNames.highlight}`}
                 value={this.state.phoneNumber}
                 onChange={this.handleChange}
                 required

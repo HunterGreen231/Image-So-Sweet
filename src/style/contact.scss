@@ -1,3 +1,11 @@
+@mixin contact-message {
+  transition: 1s ease-in-out;
+  font-size: 2rem;
+  color: $off-white;
+  text-shadow: 3px 3px black;
+  margin-bottom: 20px;
+}
+
 .contact-wrapper {
   border-top: 5px solid black;
   position: relative;
@@ -64,6 +72,11 @@
         outline: none;
       }
 
+      .warning {
+        transition: 0.5s ease-in-out;
+        background-color: rgba(179, 58, 58, 0.7);
+      }
+
       .input-field::placeholder {
         color: $off-white;
       }
@@ -128,22 +141,14 @@
           }
         }
 
-        .error-message-show {
+        .contact-message-show {
           opacity: 1;
-          transition: 0.5s ease-in-out;
-          font-size: 2rem;
-          color: $off-white;
-          text-shadow: 3px 3px black;
-          margin-bottom: 20px;
+          @include contact-message;
         }
 
-        .error-message-hidden {
+        .contact-message-hidden {
           opacity: 0;
-          transition: 1s ease-in-out;
-          font-size: 2rem;
-          color: $off-white;
-          text-shadow: 3px 3px black;
-          margin-bottom: 20px;
+          @include contact-message;
         }
       }
     }
