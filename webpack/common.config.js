@@ -1,3 +1,5 @@
+import { keys } from "./secrets"
+
 // webpack plugins
 const SplitChunksPlugin = require("webpack/lib/optimize/SplitChunksPlugin");
 var webpack = require("webpack");
@@ -47,13 +49,13 @@ module.exports = {
     new SplitChunksPlugin({
       name: ["app", "vendor"],
       minChunks: Infinity
-    }),
+    })
     new webpack.EnvironmentPlugin({
-      IMAGES_API_URL: "https://image-so-sweet-api.herokuapp.com/images",
+      IMAGES_API_URL: keys.IMAGES_API_URL,
       EMAIL_FORM_API_URL:
-        "https://image-so-sweet-form-api.herokuapp.com/email-form",
+        keys.EMAIL_FORM_API_URL,
       LOW_RES_IMAGES_API_URL:
-        "https://image-so-sweet-api.herokuapp.com/low-res-images",
+        keys.LOW_RES_IMAGES_API_URL,
       DEBUG: false
     })
   ]
