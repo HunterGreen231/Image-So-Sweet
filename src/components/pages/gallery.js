@@ -45,7 +45,7 @@ export default class GalleryPage extends Component {
   componentWillMount() {
     if (this.state.response.length == 0) {
       axios
-        .get("https://image-so-sweet-api.herokuapp.com/low-res-images")
+        .get(process.env.LOW_RES_IMAGES_API_URL)
         .then(response => {
           this.setState({
             response: response.data,

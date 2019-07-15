@@ -79,10 +79,7 @@ export default class Contact extends Component {
       });
 
       axios
-        .post(
-          "https://image-so-sweet-form-api.herokuapp.com/email-form",
-          this.buildForm()
-        )
+        .post(process.env.EMAIL_FORM_API_URL, this.buildForm())
         .then(function(response) {
           console.log("Email sent");
         })
