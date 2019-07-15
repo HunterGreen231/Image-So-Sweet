@@ -19,7 +19,7 @@ export default class Home extends Component {
 
   componentWillMount() {
     axios
-      .get("https://image-so-sweet-api.herokuapp.com/images")
+      .get(process.env.IMAGES_API_URL)
       .then(response => {
         this.setState({
           featuredSession: response.data.filter(function(value) {
