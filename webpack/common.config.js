@@ -1,4 +1,5 @@
 // webpack plugins
+var webpack = require("webpack");
 const SplitChunksPlugin = require("webpack/lib/optimize/SplitChunksPlugin");
 
 module.exports = {
