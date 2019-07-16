@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
+import { Keys } from "../../../secrets";
 
 import Contact from "../contact";
 import Parralax from "../parralax-background";
@@ -19,7 +20,11 @@ export default class Home extends Component {
 
   componentWillMount() {
     axios
-      .get(process.env.IMAGES_API_URL)
+      .get(
+        process.env.IMAGES_API_URL
+          ? process.env.IMAGES_API_URL
+          : Keys.IMAGES_API_URL
+      )
       .then(response => {
         this.setState({
           featuredSession: response.data.filter(function(value) {

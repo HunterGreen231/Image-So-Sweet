@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Lightbox from "react-images";
 import axios from "axios";
+import { Keys } from "../../../secrets";
 
 import Session from "../sessions/session";
 import Contact from "../contact";
@@ -45,7 +46,11 @@ export default class GalleryPage extends Component {
   componentWillMount() {
     if (this.state.response.length == 0) {
       axios
-        .get(process.env.LOW_RES_IMAGES_API_URL)
+        .get(
+          process.env.LOW_RES_IMAGES_API_URL
+            ? process.env.LOW_RES_IMAGES_API_URL
+            : Keys.LOW_RES_IMAGES_API_URL
+        )
         .then(response => {
           this.setState({
             response: response.data,
