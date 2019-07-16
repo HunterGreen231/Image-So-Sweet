@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Keys } from "../../secrets";
+if ("../../secrets.js") {
+  import { Keys } from "../../secrets";
+}
 
 export default class Contact extends Component {
   constructor(props) {

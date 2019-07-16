@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import Lightbox from "react-images";
 import axios from "axios";
-import { Keys } from "../../../secrets";
+if ("../../../secrets.js") {
+  import { Keys } from "../../../secrets";
+}
 
 import Session from "../sessions/session";
 import Contact from "../contact";
