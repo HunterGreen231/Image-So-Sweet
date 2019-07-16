@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-try {
-  import { Keys } from "../../secrets";
-} catch (e) {
-  throw e;
-}
 
 export default class Contact extends Component {
   constructor(props) {
@@ -84,12 +79,7 @@ export default class Contact extends Component {
       });
 
       axios
-        .post(
-          process.env.EMAIL_FORM_API_URL
-            ? process.env.EMAIL_FORM_API_URL
-            : Keys.EMAIL_FORM_API_URL,
-          this.buildForm()
-        )
+        .post(process.env.EMAIL_FORM_API_URL, this.buildForm())
         .then(function(response) {
           console.log("Email sent");
         })

@@ -1,4 +1,5 @@
 // webpack plugins
+var Keys = require("../secrets");
 var webpack = require("webpack");
 const SplitChunksPlugin = require("webpack/lib/optimize/SplitChunksPlugin");
 
@@ -48,10 +49,12 @@ module.exports = {
       name: ["app", "vendor"],
       minChunks: Infinity
     }),
-    new webpack.DefinePlugin({
-      "process.env": {
-        NODE_ENV: JSON.stringify("production")
-      }
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: "development",
+      IMAGES_API_URL: Keys.IMAGES_API_URL,
+      EMAIL_FORM_API_URL: Keys.EMAIL_FORM_API_URL,
+      LOW_RES_IMAGES_API_URL: Keys.LOW_RES_IMAGES_API_URL,
+      DEBUG: false
     })
   ]
 };
