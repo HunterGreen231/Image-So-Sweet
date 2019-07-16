@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import Lightbox from "react-images";
 import axios from "axios";
-if ("../../../secrets.js") {
+try {
   import { Keys } from "../../../secrets";
+} catch (e) {
+  throw e;
 }
 
 import Session from "../sessions/session";

@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSpinner } from "@fortawesome/free-solid-svg-icons";
-if ("../../../secrets.js") {
+try {
   import { Keys } from "../../../secrets";
+} catch (e) {
+  throw e;
 }
 
 import Contact from "../contact";
