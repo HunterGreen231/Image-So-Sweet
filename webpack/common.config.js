@@ -46,6 +46,10 @@ module.exports = {
     new SplitChunksPlugin({
       name: ["app", "vendor"],
       minChunks: Infinity
-    })
+    }),
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'production', // use 'development' unless process.env.NODE_ENV is defined
+      DEBUG: false
+    });
   ]
 };
