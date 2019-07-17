@@ -18,8 +18,6 @@ export default class Home extends Component {
   }
 
   componentWillMount() {
-    console.log(process.env);
-    console.log(process.env.NODE_ENV);
     axios
       .get(process.env.IMAGES_API_URL)
       .then(response => {

@@ -55,7 +55,12 @@ module.exports = webpackMerge(webpackCommon, {
   plugins: [
     new DefinePlugin({
       "process.env": {
-        NODE_ENV: "'development'"
+        NODE_ENV: "'development'",
+        EMAIL_FORM_API_URL:
+          '"https://image-so-sweet-form-api.herokuapp.com/email-form"',
+        IMAGES_API_URL: '"https://image-so-sweet-api.herokuapp.com/images"',
+        LOW_RES_IMAGES_API_URL:
+          '"https://image-so-sweet-api.herokuapp.com/low-res-images"'
       }
     }),
     new HtmlWebpackPlugin({
