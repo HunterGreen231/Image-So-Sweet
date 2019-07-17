@@ -93,7 +93,12 @@ module.exports = webpackMerge(webpackCommon, {
     }),
     new DefinePlugin({
       "process.env": {
-        NODE_ENV: '"production"'
+        NODE_ENV: '"production"',
+        EMAIL_FORM_API_URL:
+          '"https://image-so-sweet-form-api.herokuapp.com/email-form"',
+        IMAGES_API_URL: '"https://image-so-sweet-api.herokuapp.com/images"',
+        LOW_RES_IMAGES_API_URL:
+          '"https://image-so-sweet-api.herokuapp.com/low-res-images"'
       }
     }),
     new ExtractTextPlugin("[name]-[chunkhash].min.css"),
