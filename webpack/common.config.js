@@ -48,8 +48,8 @@ module.exports = {
       minChunks: Infinity
     }),
     new webpack.EnvironmentPlugin({
-      NODE_ENV: 'production', // use 'development' unless process.env.NODE_ENV is defined
+      NODE_ENV: "production", // use 'development' unless process.env.NODE_ENV is defined
       DEBUG: false
-    });
+    })
   ]
 };
