@@ -43,7 +43,7 @@
   }
 
   .featured-session {
-    height: 807px;
+    height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -54,6 +54,7 @@
     align-items: center;
 
     .title {
+      padding-top: 30px;
       font-size: 2.1rem;
       color: $off-white;
       text-align: center;
