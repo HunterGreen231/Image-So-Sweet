@@ -73,12 +73,7 @@ export default class Home extends Component {
                   <li>
                     <span>Princess</span>
                   </li>
-                  {/* <li>Your favorite Prince and Princess</li> */}
                 </ul>
-                {/* <h1>
-              Mermaids Pirates Fairies Pixies Trolls Your favorite Prince and
-              Princess
-            </h1> */}
               </div>
             </div>
             <Parralax
