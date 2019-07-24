@@ -69,7 +69,15 @@ export default class Session extends Component {
               {this.props.featuredSessionTitle && (
                 <h1 style={{ marginTop: "40px" }}>Featured Session</h1>
               )}
-              <h1>{this.props.Title}</h1>
+              <h1
+                style={
+                  this.props.featuredSessionTitle
+                    ? { fontSize: "2.0rem" }
+                    : { fontSize: "2.5rem" }
+                }
+              >
+                {this.props.Title}
+              </h1>
             </div>
 
             <Gallery
