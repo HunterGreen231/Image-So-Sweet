@@ -8,20 +8,28 @@ export default class Session extends Component {
     super(props);
 
     this.breaker = false;
-    this.result = [];
+    this.result1 = [];
+    this.result2 = [];
     this.checkImages = this.checkImages.bind(this);
     this.handleWindowClick = this.handleWindowClick.bind(this);
   }
 
   checkImages = () => {
     if (!this.breaker) {
-      const session = this.props.session;
+      const session1 = this.props.session1;
+      const session2 = this.props.session2;
 
-      this.result = this.props.photoObject.filter(function(value) {
-        return value.session == session;
+      this.result1 = this.props.photoObject.filter(function(value) {
+        return value.session == session1;
+      });
+      this.result2 = this.props.photoObject.filter(function(value) {
+        return value.session == session2;
+      });
+      this.result2.forEach(image => {
+        this.result1.push(image);
       });
       this.props.updateNumberOfImages(
-        this.result.length,
+        this.result1.length,
         this.props.sessionNumber
       );
       if (this.props.photoObject.length + 1 == this.props.apiImageLength) {
@@ -47,7 +55,7 @@ export default class Session extends Component {
 
     return (
       <div
-        className="page-content blog-container"
+        className="blog-container"
         onClick={() =>
           this.props.updateSessionCurrent(this.props.second, this.props.third)
         }
@@ -58,10 +66,14 @@ export default class Session extends Component {
           <div>
             {this.checkImages()}
             <div className="session-title-blog-wrapper">
-              <h1>{this.props.session}</h1>
+              {this.props.featuredSessionTitle && (
+                <h1 style={{ marginTop: "40px" }}>Featured Session</h1>
+              )}
+              <h1>{this.props.Title}</h1>
             </div>
+
             <Gallery
-              photos={this.result}
+              photos={this.result1}
               direction={"column"}
               onClick={this.props.openLightbox}
             />

@@ -94,7 +94,6 @@ export default class GalleryPage extends Component {
       lightboxIsOpen: false
     });
     this.sessionCurrent = 0;
-    this.props.setDeleteNav(true);
   };
   gotoPrevious() {
     this.setState({
@@ -150,7 +149,9 @@ export default class GalleryPage extends Component {
               gotoPrevious={this.gotoPrevious}
               gotoNext={this.gotoNext}
               lightboxIsOpen={this.state.lightboxIsOpen}
-              session={"The Harmon sisters Fairy Session"}
+              session1={"The Harmon sisters Fairy Session"}
+              featuredSessionTitle={true}
+              Title={"The Harmon sisters Fairy Session"}
               sessionNumber={0}
               updateSessionCurrent={this.updateSessionCurrent}
               updateNumberOfImages={this.updateNumberOfImages}
@@ -164,14 +165,17 @@ export default class GalleryPage extends Component {
               gotoPrevious={this.gotoPrevious}
               gotoNext={this.gotoNext}
               lightboxIsOpen={this.state.lightboxIsOpen}
-              session={"Snow White"}
+              session1={"Snow White"}
+              session2={"All that Glitters"}
+              Title={"Gallery"}
+              featuredSessionTitle={false}
               sessionNumber={1}
               updateSessionCurrent={this.updateSessionCurrent}
               second={true}
               updateNumberOfImages={this.updateNumberOfImages}
               apiImageLength={this.state.apiImageLength}
             />
-            <Session
+            {/* <Session
               currentImage={this.state.currentImage}
               photoObject={this.photoObject}
               openLightbox={this.openLightbox}
@@ -185,7 +189,7 @@ export default class GalleryPage extends Component {
               third={true}
               updateNumberOfImages={this.updateNumberOfImages}
               apiImageLength={this.state.apiImageLength}
-            />
+            /> */}
           </div>
         ) : null}
         <Contact />
