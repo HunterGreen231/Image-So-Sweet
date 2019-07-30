@@ -3,12 +3,12 @@
     display: none !important;
   }
 
+  .nav-link {
+    display: flex !important;
+  }
+
   .nav-wrapper {
     height: 60px;
-
-    .nav-link {
-      display: flex !important;
-    }
 
     .divider {
       display: flex !important;

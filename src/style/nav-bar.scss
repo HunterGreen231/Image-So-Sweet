@@ -19,13 +19,6 @@
     height: 100%;
     width: 60%;
 
-    .nav-link {
-      display: none;
-      a {
-        @include link;
-      }
-    }
-
     .divider {
       display: none;
       color: $off-white;
@@ -76,10 +69,32 @@
   }
 }
 
+.nav-link {
+  display: none;
+  a {
+    @include link;
+  }
+}
+
 .nav-link-active {
   border-bottom: 1px solid $off-white !important;
 
   &:hover {
     border-bottom: 1px solid grey !important;
+  }
+}
+
+.sessions-hover-arrow {
+  padding-left: 3px;
+}
+
+.sessions-hover {
+  width: 242px;
+  margin-left: 487px;
+
+  .hover-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-left: 81px;
   }
 }

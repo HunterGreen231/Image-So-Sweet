@@ -1,0 +1,10 @@
+.react-tabs__tab {
+  color: white;
+  transition: 0.5s ease-in-out;
+}
+
+.react-tabs__tab--selected {
+  color: white;
+  background-color: black;
+  transition: 0.2s ease-in-out;
+}
