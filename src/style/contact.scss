@@ -7,11 +7,10 @@
 }
 
 .contact-wrapper {
-  border-top: 5px solid black;
+  border-top: 5px solid $off-white;
   position: relative;
   .contact-background {
     opacity: 0.4;
-    background-image: url("../../static/images/Contact-Background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
