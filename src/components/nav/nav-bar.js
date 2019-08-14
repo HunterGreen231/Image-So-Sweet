@@ -29,7 +29,10 @@ const NavBar = props => {
           </div>
           <h1 className="divider">/</h1>
           <div className="nav-link">
-            <a
+            <NavLink to="/gallery" activeClassName="nav-link-active">
+              Gallery
+            </NavLink>
+            {/* <a
               className="nav-link hover"
               onMouseEnter={() => setHidden(false)}
               onMouseLeave={() => setHidden(true)}
@@ -39,7 +42,7 @@ const NavBar = props => {
                 icon={faCaretDown}
                 className="sessions-hover-arrow"
               />
-            </a>
+            </a> */}
           </div>
           <h1 className="divider">/</h1>
           {/* <div className="nav-link">
