@@ -115,7 +115,7 @@
   .featured-session {
     .title {
       font-size: 3.5rem !important;
-      margin-left: 300px;
+      margin-left: 300px !important;
     }
   }
 }
@@ -140,6 +140,10 @@
 }
 
 @media (max-width: 48em) {
+  .title {
+    margin-left: 50px !important;
+  }
+
   .contact-wrapper {
     .contact-background {
       height: 1120px !important;
