@@ -41,11 +41,11 @@
     width: 80% !important;
     height: 100px !important;
     top: 19% !important;
-  }
 
-  .title {
-    align-self: center !important;
-    padding-left: 0px !important;
+    .title {
+      align-self: center !important;
+      padding-left: 0px !important;
+    }
   }
 
   .about-wrapper {
@@ -114,7 +114,8 @@
 @media (min-width: 1400px) {
   .featured-session {
     .title {
-      font-size: 4.5rem !important;
+      font-size: 3.5rem !important;
+      margin-left: 300px;
     }
   }
 }
@@ -123,12 +124,12 @@
   .text-background {
     width: 80% !important;
     top: 17% !important;
-  }
 
-  .title {
-    font-size: 2.7rem !important;
-    align-self: center !important;
-    padding-left: 0px !important;
+    .title {
+      font-size: 2.7rem !important;
+      align-self: center !important;
+      padding-left: 0px !important;
+    }
   }
 }
 

@@ -6,8 +6,15 @@ import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons";
 
 const NavBar = props => {
+  const [hidden, setHidden] = useState(true);
+
   const handleHamBurgerClick = () => {
     props.setDropDown(!props.dropDown);
+  };
+
+  const classNames = {
+    hidden: "sessions-hover-hidden",
+    show: "sessions-hover-show"
   };
 
   return (
@@ -22,13 +29,17 @@ const NavBar = props => {
           </div>
           <h1 className="divider">/</h1>
           <div className="nav-link">
-            <NavLink to="/gallery" activeClassName="nav-link-active">
+            <a
+              className="nav-link hover"
+              onMouseEnter={() => setHidden(false)}
+              onMouseLeave={() => setHidden(true)}
+            >
               Sessions{" "}
               <FontAwesomeIcon
                 icon={faCaretDown}
                 className="sessions-hover-arrow"
               />
-            </NavLink>
+            </a>
           </div>
           <h1 className="divider">/</h1>
           {/* <div className="nav-link">
@@ -62,21 +73,27 @@ const NavBar = props => {
           </div>
         </div>
       </div>
-      <div className="sessions-hover">
+      <div
+        className={`sessions-hover ${
+          hidden ? classNames.hidden : classNames.show
+        }`}
+      >
         <div className="hover-wrapper">
-          <NavLink
-            to="/gallery"
-            className="nav-link"
-            activeClassName="nav-link-active"
-          >
-            Gallery
-          </NavLink>
           <NavLink
             to="/featured"
             className="nav-link"
+            style={{ paddingBottom: "10px" }}
             activeClassName="nav-link-active"
           >
             Featured
+          </NavLink>
+          <NavLink
+            to="/gallery"
+            className="nav-link"
+            style={{ paddingBottom: "10px" }}
+            activeClassName="nav-link-active"
+          >
+            Gallery
           </NavLink>
         </div>
       </div>
