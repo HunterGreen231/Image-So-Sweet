@@ -38,14 +38,9 @@
   }
 
   .text-background {
-    width: 80% !important;
+    width: 50% !important;
     height: 100px !important;
     top: 19% !important;
-
-    .title {
-      align-self: center !important;
-      padding-left: 0px !important;
-    }
   }
 
   .about-wrapper {
@@ -115,20 +110,20 @@
   .featured-session {
     .title {
       font-size: 3.5rem !important;
-      margin-left: 300px !important;
+      margin-right: 50px;
     }
   }
 }
 
 @media (max-width: 1400px) and (min-width: 48em) {
   .text-background {
-    width: 80% !important;
+    width: 65% !important;
     top: 17% !important;
 
     .title {
       font-size: 2.7rem !important;
       align-self: center !important;
-      padding-left: 0px !important;
+      margin-right: 50px;
     }
   }
 }
@@ -141,7 +136,7 @@
 
 @media (max-width: 48em) {
   .title {
-    margin-left: 50px !important;
+    margin-right: 10px !important;
   }
 
   .contact-wrapper {

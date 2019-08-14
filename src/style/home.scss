@@ -75,7 +75,7 @@
   }
 
   .text-background {
-    width: 96%;
+    width: 70%;
     height: 90px;
     background-color: rgba(0, 0, 0, 0.8);
     position: absolute;
@@ -84,7 +84,7 @@
     z-index: 2;
     transform: skew(-15deg);
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
 
     .title {
