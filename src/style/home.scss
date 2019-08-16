@@ -165,7 +165,7 @@
     width: 100%;
     position: absolute;
     bottom: 0;
-    opacity: 0.6;
+    opacity: 0.8;
     z-index: 1;
     background-color: black;
   }
@@ -183,7 +183,6 @@
 
     .investment-title {
       color: $off-white;
-      margin-bottom: 40px;
       font-size: 3rem;
     }
 
@@ -204,6 +203,7 @@
       text-align: left;
       line-height: 30px;
       width: 100%;
+      margin-bottom: 20px;
     }
   }
 }

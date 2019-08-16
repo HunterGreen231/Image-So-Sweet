@@ -62,8 +62,7 @@
   }
 
   .investment-background {
-    background-image: url("../../static/images/Investment-Background.jpg") !important;
-    height: 1100px !important;
+    height: 800px !important;
   }
 
   .investment-content {
@@ -126,6 +125,10 @@
       margin-right: 50px;
     }
   }
+
+  .investment-background {
+    height: 1050px !important;
+  }
 }
 
 @media (max-width: 768px) and (min-width: 48em) {
@@ -136,7 +139,7 @@
 
 @media (max-width: 48em) {
   .title {
-    margin-right: 10px !important;
+    margin-right: 15px !important;
   }
 
   .contact-wrapper {
@@ -177,5 +180,9 @@
     button {
       margin-top: 40px !important;
     }
+  }
+
+  .investment-background {
+    height: 925px !important;
   }
 }
